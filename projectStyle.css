@@ -1,0 +1,446 @@
+.html
+{
+	margin: 0;
+	padding: 0;
+	border:0;
+	box-sizing;
+
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(73, 125, 173); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(51, 91, 128); 
+}
+
+
+
+.navbar {
+  color: white;
+  height: 85px;
+  font-family: "Futura";
+  background-image: linear-gradient(to right, #6e89b8, #4971b7);
+  box-shadow: -1px 3px 8px #7578ad;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+
+body{width:100%;}
+
+.logo {
+  padding-top: 10px;
+}
+
+.logo h3 {
+  font-size: 28px;
+}
+
+.logo p {
+  line-height: 100%;
+  margin-top: -7px;
+}
+
+.navbar-nav {
+  font-size: 20px;
+
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropright:hover > .dropdown-menu {
+  background-color: #4971b7;
+  display: block;
+    z-index: 5;
+}
+
+.dropdown-toggle {
+  left: 10px;
+  background-color: transparent;
+    z-index: 5;
+}
+
+.dropdown-menu {
+  color: white;
+  font-family: "Futura";
+  z-index: 5;
+}
+
+h5
+{
+	text-align: center;
+}
+.card-body
+{
+	background-color: #6E89B8;
+}
+
+.card-title
+{
+	text-decoration: none;
+
+}
+h1
+{
+	text-align: center;
+	    size: 50px;
+
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+a .card-title
+{
+	color:white;
+    text-decoration: none;
+    text-align: center;
+
+}
+.cont
+{
+
+	padding: 70px;
+}
+
+.card
+{
+	width: 24vw;
+	height: 45vh;
+  margin-bottom: 40px;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+
+.card{
+  border-radius: 300px;
+}
+
+.testbox
+{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+
+}
+
+@media (max-width: 1370px) {
+
+  .card h1{
+    font-size: 30px;
+  }
+}
+
+
+.calendar
+{
+  width: 260px;
+  margin-left: 25px;
+}
+
+
+
+/* profile css */
+
+.pic{
+    border-style: solid;
+    border-color: rgb(111, 111, 177);
+    border-width: 2px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+
+.heading {
+margin-top: 10px;
+margin-left: 40px;
+
+
+
+}
+
+.info p
+{
+  color: #4971b7;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+
+.name
+{
+
+    font-size: 55px;
+    margin-bottom: -20px;
+
+}
+.desc
+{
+    font-size: 30px;
+    font-style: italic;
+    color: rgb(80, 90, 177);
+
+}
+
+.Bottom
+{
+  margin-top: -70px;
+}
+
+.major
+{
+  margin-left: 530px;
+  
+  top: 10px;
+  font-style: italic;
+  font-family: sans-serif;
+  color: #4971b7;
+  display: flex;
+
+}
+.line
+{
+
+    background-color:rgb(80, 90, 177) ;
+    height: 13px;
+    width: 1550px;
+  margin-left: 50px;
+}
+
+.place
+{
+  display: flex;
+
+  margin-left: 250px;
+}
+
+.place h1
+{
+
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+
+.hold
+{
+
+  margin-bottom: 5px;
+}
+
+.foot
+{
+  margin-left: 120px;
+  margin-top: 40px;
+  
+}
+
+.consult{
+  background-color: #7883c4;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+
+  display: inline-block;
+
+  box-shadow: 5px 8px 8px #515379;
+  border-radius: 35px;
+  font-size: 30px;
+
+}
+
+.foot
+{
+  margin-top: 100px;
+}
+
+/* Konsultant List */
+
+.contsultant
+{
+  margin-top: 1vh;
+  margin-bottom: -120px;
+  padding: 70px;
+  display: flex;
+  flex: wrap;
+  justify-content:space-around
+
+}
+
+@media (max-width: 1370px) {
+
+.stats
+{
+  display: flex;
+  margin-right: 90px;
+}
+.lower-container h3
+{
+  font-size: 510px;
+
+}
+}
+.card-container{
+  width: 600px;
+  height: 500px;
+  background: #FFF;
+  border-radius: 6px;
+  margin-right: 50px;
+  box-shadow: 0px 1px 10px 1px #000;
+  overflow: hidden;
+  display: inline-block;
+  }
+  .upper-container{
+    height: 140px;
+    background:#4971B7;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+      text-decoration: none;
+
+  }
+  .image-container{
+    background: rgb(106, 106, 133);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-top: 70px;
+
+ 
+  }
+  .image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .lower-container{
+    height: 280px;
+    background: #FFF;
+    padding: 20px;
+    padding-top: 60px;
+    text-decoration: none;
+    text-align: center;
+  }
+.lower-container h3
+{
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 80%;
+  color: black;
+
+}
+  .lower-container h3, h4{
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+  }
+
+  .lower-container h4{
+    color: #4971B7;
+
+    opacity: .6;
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+
+
+  .lower-container p{
+    font-size: 16px;
+
+    margin-bottom: 30px;
+  }
+
+
+
+.info
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+
+
+}
+.on{
+  display: flex;
+
+}
+
+
+
+.upper-container
+{
+  color: black;
+  text-decoration: none;
+}
+
+
+.stats
+{
+  display: flex;
+  margin-right: 50px;
+}
+.info h5
+{
+margin-top: 10px;
+
+}
+#circle
+{
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+  
+}
+
+.line2
+{
+  height: 6px;
+  width: 80%px;
+  background-color: #4971b7;
+
+
+}
+
+#stars
+{
+  width: 120px;
+  height: 23px;
+ margin-top: 10px;
+
+}
+
+.footers
+{
+  margin-top: 60px;
+  background-color: #4971b7;
+  height: 
+}
