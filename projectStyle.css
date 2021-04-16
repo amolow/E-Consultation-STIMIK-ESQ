@@ -5,6 +5,9 @@
 	border:0;
 	box-sizing;
 
+
+
+
 }
 /* width */
 ::-webkit-scrollbar {
@@ -43,7 +46,9 @@
 }
 
 
-body{width:100%;}
+body{width:100%;
+  background-color: blue;
+}
 
 .logo {
   padding-top: 10px;
@@ -444,3 +449,4 @@ margin-top: 10px;
   background-color: #4971b7;
   height: 
 }
+

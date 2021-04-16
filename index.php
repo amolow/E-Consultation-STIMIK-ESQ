@@ -33,13 +33,19 @@
   </head>
 
 
-  <body>
+  <body class="bagc">
     
     <?php include("nav.php");?>
 
 
 
 <?php
+
+session_start();
+if($_SESSION["valid"] != true){
+    header("location: pages/login.php");
+}
+
 $pages_dir = 'pages';
 if(!empty($_GET['p'])){
 $pages = scandir($pages_dir, 0);
@@ -56,9 +62,5 @@ include($pages_dir.'/home.php');
 ?>
 
 
-
-
-  <?php include("foot.php");?>
-  </body>
 
 </html>

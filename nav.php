@@ -54,7 +54,7 @@
             </li>
           </div>
         </div>
-        <a href="../Login/Login.html">
+        <a href="pages/login.php">
           <img src="Asset/logout.png" alt="" id="logout" />
       </a>
       </div>
