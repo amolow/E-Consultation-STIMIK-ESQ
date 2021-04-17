@@ -3,9 +3,6 @@
 	margin: 0;
 	padding: 0;
 	border:0;
-	box-sizing;
-
-
 
 
 }
@@ -33,6 +30,7 @@
 
 
 
+
 .navbar {
   color: white;
   height: 85px;
@@ -47,7 +45,7 @@
 
 
 body{width:100%;
-  background-color: blue;
+
 }
 
 .logo {
@@ -101,12 +99,7 @@ h5
 	text-decoration: none;
 
 }
-h1
-{
-	text-align: center;
-	    size: 50px;
 
-}
 
 a {
     color: #0060B6;
@@ -138,7 +131,7 @@ a .card-title
 	width: 24vw;
 	height: 45vh;
   margin-bottom: 40px;
-  box-shadow: 5px 10px 8px #888888;
+
 }
 
 
@@ -443,10 +436,76 @@ margin-top: 10px;
 
 }
 
-.footers
+
+/* bookingScreen */
+
+.mainBooking
 {
-  margin-top: 60px;
-  background-color: #4971b7;
-  height: 
+  display: flex;
+  margin-top: 40px;
 }
 
+.booking
+{
+  margin-left: 50px;
+  width: 50vw;
+
+
+
+}
+
+.picture
+{
+  width: 50vw;
+  text-align: center;
+  display: block;
+}
+
+.counselling
+{
+  margin-top: 10vh;
+}
+
+
+/* home2 */
+.main2{
+
+  color: #4971b7;
+  padding: 70px;
+}
+
+
+.topHome2
+{
+  
+  font-family: Futura;
+
+  text-align: center;
+}
+
+.contentMain2
+{
+
+  display: flex;
+}
+.leftContentMain2
+{
+  width: 40vw;
+}
+
+.leftContentMain2 h2
+{
+  font-family: Futura;
+  font-size: 90px;
+  width: 40vw;
+}
+.leftContentMain2 h3
+{
+  width: 30vw;
+}
+
+.leftContentMain2 p
+{
+  margin-top: 40px;;
+  width: 30vw;
+}

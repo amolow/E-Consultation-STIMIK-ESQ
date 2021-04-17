@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav" style="margin-left: 5em">
             <a class="nav-link text-white" href="index.php">HOME</a>
-            <a class="nav-link text-white" href="../AboutUs/AboutUs.html">ABOUT US</a>
+            <a class="nav-link text-white" href="index.php?p=bookingScreen">ABOUT US</a>
             <a class="nav-link text-white" href="index.php?p=profile">PROFILE</a>
             <li class="nav-item dropdown">
               <a
@@ -45,7 +45,7 @@
                   </button>
                   <div class="dropdown-menu" >
                     <a class="dropdown-item text-white" href="index.php?p=listConsultant">Dosen Pembimbing</a>
-                    <a class="dropdown-item text-white" href="#">Dosen Kaprodi</a>
+                    <a class="dropdown-item text-white" href="index.php?p=home2">Dosen Kaprodi</a>
                   </div>
                 </div>
                 <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Keuangan</a>
