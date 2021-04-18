@@ -1,0 +1,70 @@
+.isi {
+  background-color: rgb(160, 193, 255);
+}
+
+.kotak {
+  width: 1100px;
+  height: 550px;
+  background-color: white;
+  box-shadow: -1px 3px 8px #7578ad;
+  margin-top: 55px;
+  margin-left: 95px;
+}
+
+.head {
+  color: white;
+  padding: 30px 50px;
+  background-color: #4971b7;
+}
+
+.head h4 {
+  font-size: 40px;
+  font-family: "Futura";
+}
+
+.kot {
+  padding: 30px 50px;
+}
+
+.ko {
+  justify-content: space-between;
+  font-family: "futura";
+  font-weight: bold;
+  background-color: rgb(160, 193, 255);
+  margin-top: 60px;
+  margin-left: 8px;
+  display: flex;
+}
+
+.input {
+  padding: 60px 20px;
+  margin-left: 80px;
+}
+
+.text {
+  padding: 50px 80px;
+}
+
+.alert {
+  background-color: rgb(160, 193, 255);
+}
+
+.klik {
+  margin-top: 30px;
+  margin-left: 670px;
+}
+
+#butn {
+  margin-top: 10px;
+  margin-left: 870px;
+}
+
+.balasan {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.klikLihat {
+  margin-top: 20px;
+  margin-left: 790px;
+}
