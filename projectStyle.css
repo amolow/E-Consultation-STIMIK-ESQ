@@ -161,6 +161,12 @@ a .card-title
   margin-left: 25px;
 }
 
+.titleHome
+{
+  size: 40px;
+  text-align: center;
+}
+
 
 
 /* profile css */
@@ -509,3 +515,17 @@ margin-top: 10px;
   margin-top: 40px;;
   width: 30vw;
 }
+
+.btnSecondarys
+{
+  background-color: rgb(143, 0, 0);
+  color: #515379;
+}
+
+
+.buttonBook 
+{
+size: 10px;
+}
+
+
