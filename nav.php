@@ -23,13 +23,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav" style="margin-left: 5em">
-            <a class="nav-link text-white" href="index.php">HOME</a>
+            <a class="nav-link text-white" href="index.php?p=home2">HOME</a>
             <a class="nav-link text-white" href="index.php?p=bookingScreen">ABOUT US</a>
             <a class="nav-link text-white" href="index.php?p=profile">PROFILE</a>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-white"
-                href="#"
+                href="pages/home.php"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -54,7 +54,8 @@
             </li>
           </div>
         </div>
-        <a href="pages/login.php">
+        <a class="nav-link text-white" href="index.php?p=bookingList">Your Bookings</a>
+        <a href="index.php?p=profile">
           <img src="Asset/logout.png" alt="" id="logout" />
       </a>
       </div>

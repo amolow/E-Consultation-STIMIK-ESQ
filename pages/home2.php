@@ -10,12 +10,11 @@
                 irure dolor in reprehenderit in voluptate velit esse cillum 
                 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             </p>
-
-            <button type="button" class="btn btn-primary btn-lg">Book a Consul Now!</button>
-
+            <a class="btn btn-primary" href="index.php?p=home" role="button">Book a Consul Now!</a>
         </div>
 
         <div>
+            
             <img src="Asset/counselling2.png" width= "900">
         </div>
     </div>

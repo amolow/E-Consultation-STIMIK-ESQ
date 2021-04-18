@@ -41,10 +41,7 @@
 
 <?php
 
-session_start();
-if($_SESSION["valid"] != true){
-    header("location: pages/login.php");
-}
+
 
 $pages_dir = 'pages';
 if(!empty($_GET['p'])){
@@ -57,7 +54,7 @@ include($pages_dir.'/'.$p.'.php');
 echo 'Halaman tidak ditemukan! :(';
 }
 } else {
-include($pages_dir.'/home.php');
+include($pages_dir.'/home2.php');
 }
 ?>
 
