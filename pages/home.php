@@ -15,8 +15,8 @@
                 <img src="Asset/keuangan.png" class="card-img-top" alt="...">
                 <div class="card-body">
                 </a>
-                <a href="index.php?p=listConsultant">
-                  <h1 class="card-title">Keuangan</h1>
+                  <a href="index.php?p=listConsultant">
+                    <h1 class="card-title">Keuangan</h1>
                   </a>
                 </div>
               </div>
