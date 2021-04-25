@@ -1,65 +1,65 @@
 .main {
-    font-family: "Futura";
-    padding: 90px 390px;
-    /* background-color: aqua; */
-    background-image: url(Asset/bg.png);
-    background-size: cover;
-  }
-  
-  .tengah {
-    padding: 30px 40px;
-    color: white;
-    margin: auto;
-    border-radius: 30px;
-    width: 585px;
-    height: 520px;
-    box-shadow: 5px 10px 8px #1a315b;
-    background-color: #415882;
-  
-  }
-  
-  .tengah h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 68px;
-  }
-  
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-  }
-  
-  .form-group {
-    padding-top: 15px;
-  }
-  
-  #exampleInput {
-    border-radius: 10px;
-  }
-  
-  .btn {
-    background-color: #4771b7;
-    width: 170px;
-  
-  }
-  
+  font-family: "Futura";
+  padding: 90px 390px;
+  /* background-color: aqua; */
+  background-image: url(Asset/bg.png);
+  background-size: cover;
+}
 
-  
-  .klik {
-    padding-top: 25px;
-    text-align: center;
-  }
-  
-  .klik .btn {
-    font-weight: bold;
-    font-family: "Futura";
-  }
-  
-  .cont
-  {position: fixed;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-  }
+.tengah {
+  padding: 30px 40px;
+  color: white;
+  margin: auto;
+  border-radius: 30px;
+  width: 585px;
+  height: 520px;
+  box-shadow: 5px 10px 8px #1a315b;
+  background-color: #415882;
+
+}
+
+.tengah h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 68px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.form-group {
+  padding-top: 15px;
+}
+
+#exampleInput {
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: #4771b7;
+  width: 170px;
+
+}
+
+
+
+.klik {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.klik .btn {
+  font-weight: bold;
+  font-family: "Futura";
+}
+
+.cont
+{position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}

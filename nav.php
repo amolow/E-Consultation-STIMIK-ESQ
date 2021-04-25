@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav" style="margin-left: 5em">
             <a class="nav-link text-white" href="index.php?p=home2">HOME</a>
-            <a class="nav-link text-white" href="index.php?p=bookingScreen">ABOUT US</a>
+            <a class="nav-link text-white" href="index.php?p=actionPlan">ABOUT US</a>
             <a class="nav-link text-white" href="index.php?p=profile">PROFILE</a>
             <li class="nav-item dropdown">
               <a
@@ -54,8 +54,8 @@
             </li>
           </div>
         </div>
-        <a class="nav-link text-white" href="index.php?p=bookingList">Your Bookings</a>
-        <a href="index.php?p=profile">
+        <a class="nav-link text-white" href="index.php?p=crud">Your Bookings</a>
+        <a href="pages/login.php">
           <img src="Asset/logout.png" alt="" id="logout" />
       </a>
       </div>

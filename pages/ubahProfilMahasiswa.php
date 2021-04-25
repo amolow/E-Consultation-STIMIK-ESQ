@@ -1,3 +1,33 @@
+<?php
+require_once
+('./class/class.Employee.php ');
+$objEmployee = new Employee();
+
+
+if (isset ($_POST['btnSubmit'])){
+    $objEmployee->ssn= $_POST['ssn'];
+    $objEmployee->fname= $_POST['fname'];
+    $objEmployee->address= $_POST['address'];
+
+    if(isset($_GET['ssn'])){
+        $objEmployee->ssn= $_GET['ssn'];
+        $objEmployee->UpdateEmployee();
+    }
+    else{
+        $objEmployee->AddEmployee();
+    }
+    echo "<script> alert('$objEmployee->message'); </script>";
+    if($objEmployee->hasil){
+    echo '<script> window.location = "index.php?p=employeelist";
+    </script>';
+    }
+    }
+    else if(isset($_GET['ssn'])){
+    $objEmployee->ssn = $_GET['ssn'];
+    $objEmployee->SelectOneEmployee();
+    }
+    ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,47 +55,50 @@
 
                 <div class="information">
                   <p class="name"><b style="font-size: 40px;" >Edit Profile</b></p>
-              		<form action="profile.php" method="post" style="font-size: 20px;">
+                  <form action="" method="post">
               			 <div class="mb-3 row" style="padding-top: 20px;">
       						    <label class="col-sm-2 col-form-label"><b>Nama</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px; ">
-      						      <input type="text" class="form-control" name="name" value="Mutiara Persada Pulungan" >
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
       						    </div>
       						 </div>
       						 <div class="mb-3 row">
       						    <label class="col-sm-2 col-form-label"><b>NIM</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px;">
-      						      <input type="text" class="form-control" name="nim" value="1910130010">
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
       						    </div>
       						 </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>DoB</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                        <input type="text" class="form-control" name="DoB" value="19 Januari 2001">
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Gender</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                        <input type="text" class="form-control" name="gender" value="Perempuan">
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                        <input type="text" class="form-control" name="alamat" value="Jakarta Selatan">
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Handphone</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                        <input type="text" class="form-control" name="notelpon" value="086274839578">
+                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
                       </div>
                    </div>
       						 
-              		</form>
-                </div>
-              	
+              		
+                  <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
+            <a href="index.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
+            </form>
+        </div>
+ 
 
             <style type="text/css">
               h1{
@@ -74,20 +107,6 @@
                 font-size: 30px;
               }
             </style>
-              <h1>Computer Science</h1>
-              <div class="place">
-                <div class="hold">
-                </div>
-                  <h1></h1>
-              </div>
-              
-          </div>
-          <div class="line"></div>
-        </div>
-        <div class="foot">
-            
-            <a href="index.php?p=profile" type="button" class="consult" style="margin-left: 1000px;">SAVE Profile</a>
 
-        </div>
 </body>
 </html>
