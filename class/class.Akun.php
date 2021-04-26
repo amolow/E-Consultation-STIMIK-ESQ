@@ -2,15 +2,15 @@
 
 class Akun extends Connection
 {
-	private $username;
-	private $password;
-    private $namadepan;
-    private $namabelakang;
-    private $email;
-    private $alamat;
-    private $gender;
-    private $notelp;
-    private $role;
+	private $username = "";
+	private $password= "";
+    private $namadepan= "";
+    private $namabelakang= "";
+    private $email= "";
+    private $alamat= "";
+    private $gender= "";
+    private $notelp= "";
+    private $role= "";
   
   public function __get($atribute) 
   {

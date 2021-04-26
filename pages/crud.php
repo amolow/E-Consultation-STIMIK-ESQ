@@ -1,4 +1,6 @@
 <html>
+<div class = "tableWindow">
+
 <div class="tes" id ="crud">
 <h4 class="title">
 <span class="text">
@@ -46,11 +48,11 @@
             echo '<td>'.$dataAkun->notelp.'</td>';
             echo '<td>'.$dataAkun->role.'</td>';
             echo '<td>
-            <a class="btn btn-warning" href="index.php?p=bookingScreen&username='.$dataAkun->username.'"> 
+            <a class="btn btn-primary" href="index.php?p=bookingScreen&username='.$dataAkun->username.'"> 
             Edit 
             </a> | 
             
-            <a class="btn btn-danger" href="index.php?p=deleteAkun&username='.$dataAkun->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-primary" href="index.php?p=deleteAkun&username='.$dataAkun->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';
@@ -59,6 +61,7 @@
     }
     
 ?>
+</div>
 </div>
 </html>
 

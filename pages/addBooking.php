@@ -2,21 +2,31 @@
 require_once
 ('./class/class.Booking.php ');
 $objBooking = new Booking();
-
+// private $NIM;
+// private $IDKonsultan;
+// private $waktu;
+// private $status;
+// private $alasan;
+// private $jadwal;
+// private $kategori;
+// private $tempat;
+// private $IDBooking;
+// private $judul;
+// private $isi;
 
 if (isset ($_POST['btnSubmit'])){
-    $objBooking->username= $_POST['username'];
-    $objBooking->password= $_POST['password'];
-    $objBooking->namadepan= $_POST['namadepan'];
-    $objBooking->namadepan= $_POST['namabelakang'];
-    $objBooking->namadepan= $_POST['email'];
-    $objBooking->namadepan= $_POST['alamat'];
-    $objBooking->namadepan= $_POST['gender'];
-    $objBooking->namadepan= $_POST['notelp'];
-    $objBooking->namadepan= $_POST['role'];
+    $objBooking->IDBooking= $_POST['IDBooking'];
+    $objBooking->IDKonsultan= $_POST['IDKonsultan'];
+    $objBooking->waktu= $_POST['waktu'];
+    $objBooking->status= $_POST['status'];
+    $objBooking->alasan= $_POST['alasan'];
+    $objBooking->jadwal= $_POST['jadwal'];
+    $objBooking->kategori= $_POST['kategori'];
+    $objBooking->NIM= $_POST['NIM'];
+    $objBooking->tempat= $_POST['tempat'];
 
-    if(isset($_GET['username'])){
-        $objBooking->username= $_GET['username'];
+    if(isset($_GET['IDBooking'])){
+        $objBooking->IDBooking= $_GET['IDBooking'];
         $objBooking->UpdateBooking();
     }
     else{
@@ -28,8 +38,8 @@ if (isset ($_POST['btnSubmit'])){
     </script>';
     }
     }
-    else if(isset($_GET['username'])){
-    $objBooking->username = $_GET['username'];
+    else if(isset($_GET['IDBooking'])){
+    $objBooking->IDBooking = $_GET['IDBooking'];
     $objBooking->SelectOneBooking();
     }
     ?>
@@ -47,46 +57,46 @@ if (isset ($_POST['btnSubmit'])){
         
         <table class="table">
     <tr>
-    <td>username</td>
+    <td>IDBooking</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="username" value="<?php echo $objBooking->username; ?>">
+    <td><input type="text" class="form-control" name="IDBooking" value="<?php echo $objBooking->IDBooking; ?>">
     </td>
     </tr>
     <tr>
-    <td>password</td>
+    <td>IDKonsultan</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->password; ?>">
+    <td><input type="text" class="form-control" name="IDKonsultan" value="<?php echo $objBooking->IDKonsultan; ?>">
     </tr>
-    <td>Nama Depan</td>
+    <td>NIM</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->namadepan; ?>">
+    <td><input type="text" class="form-control" name="NIM" value="<?php echo $objBooking->NIM; ?>">
     </tr>
     <tr>
     <td>Nama Belakang</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->namabelakang; ?>">
+    <td><input type="text" class="form-control" name="status" value="<?php echo $objBooking->status; ?>">
     </tr>
     <tr>
     <td>Email</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->email; ?>">
+    <td><input type="text" class="form-control" name="alasan" value="<?php echo $objBooking->alasan; ?>">
     </tr>
     <tr>
     <td>Alamat</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->alamat; ?>">
+    <td><input type="text" class="form-control" name="jadwal" value="<?php echo $objBooking->jadwal; ?>">
     </tr>
     <td>Gender</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->gender; ?>">
+    <td><input type="text" class="form-control" name="kategori" value="<?php echo $objBooking->kategori; ?>">
     </tr>
     <td>No Telp</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->notelp; ?>">
+    <td><input type="text" class="form-control" name="waktu" value="<?php echo $objBooking->waktu; ?>">
     </tr>
-    <td>role</td>
+    <td>tempat</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objBooking->role; ?>">
+    <td><input type="text" class="form-control" name="tempat" value="<?php echo $objBooking->tempat; ?>">
     </tr>
     <tr>
     <td colspan="2"></td>

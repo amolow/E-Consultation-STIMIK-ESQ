@@ -1,6 +1,11 @@
 <html>
+<div class = "tableWindow">
+<h4 class="title">
+<span class="text">
+<strong>Booking List</strong>
 
 </span></h4>
+
 <a class="btn btn-primary" href="index.php?p=addBooking">Add</a>
 <table class="table table-bordered">
 <tr>
@@ -49,11 +54,11 @@
 
 
             echo '<td>
-            <a class="btn btn-primary" href="index.php?p=addBooking&username='.$dataBooking->IDKonsultan.'"> 
+            <a class="btn btn-primary" href="index.php?p=addBooking&IDBooking='.$dataBooking->IDBooking.'"> 
             Edit 
             </a> | 
             
-            <a class="btn btn-primary" href="index.php?p=deleteBooking&username='.$dataBooking->IDKonsultan.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-primary" href="index.php?p=deleteBooking&IDBooking='.$dataBooking->IDBooking.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';
@@ -62,5 +67,6 @@
     }
     
 ?>
+</div>
 </div>
 </html>

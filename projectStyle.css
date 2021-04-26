@@ -404,7 +404,6 @@ h4 {
   width: 30vw;
 }
 
-
 /* action plan*/
 .isii {
   background-color: rgb(160, 193, 255);
@@ -477,6 +476,11 @@ h4 {
   margin-left: 790px;
 }
 
-
-
 /* login */
+.tableWindow {
+  padding: 50px;
+}
+
+#crud .tes {
+  padding: 40px;
+}

@@ -8,12 +8,12 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->username= $_POST['username'];
     $objAkun->password= $_POST['password'];
     $objAkun->namadepan= $_POST['namadepan'];
-    $objAkun->namadepan= $_POST['namabelakang'];
-    $objAkun->namadepan= $_POST['email'];
-    $objAkun->namadepan= $_POST['alamat'];
-    $objAkun->namadepan= $_POST['gender'];
-    $objAkun->namadepan= $_POST['notelp'];
-    $objAkun->namadepan= $_POST['role'];
+    $objAkun->namabelakang= $_POST['namabelakang'];
+    $objAkun->email= $_POST['email'];
+    $objAkun->alamat= $_POST['alamat'];
+    $objAkun->gender= $_POST['gender'];
+    $objAkun->notelp= $_POST['notelp'];
+    $objAkun->role= $_POST['role'];
 
     if(isset($_GET['username'])){
         $objAkun->username= $_GET['username'];
@@ -39,7 +39,7 @@ if (isset ($_POST['btnSubmit'])){
 <html>
     <div class = "mainBooking">
         <div class ="booking">
-            <h2>Edit Akun</h2>
+            <h2>Add/Edit Akun</h2>
 
 
 
@@ -59,34 +59,34 @@ if (isset ($_POST['btnSubmit'])){
     </tr>
     <td>Nama Depan</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->namadepan; ?>">
+    <td><input type="text" class="form-control" name="namadepan" value="<?php echo $objAkun->namadepan; ?>">
     </tr>
     <tr>
     <td>Nama Belakang</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->namabelakang; ?>">
+    <td><input type="text" class="form-control" name="namabelakang" value="<?php echo $objAkun->namabelakang; ?>">
     </tr>
     <tr>
     <td>Email</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->email; ?>">
+    <td><input type="text" class="form-control" name="email" value="<?php echo $objAkun->email; ?>">
     </tr>
     <tr>
     <td>Alamat</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->alamat; ?>">
+    <td><input type="text" class="form-control" name="alamat" value="<?php echo $objAkun->alamat; ?>">
     </tr>
     <td>Gender</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->gender; ?>">
+    <td><input type="text" class="form-control" name="gender" value="<?php echo $objAkun->gender; ?>">
     </tr>
     <td>No Telp</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->notelp; ?>">
+    <td><input type="text" class="form-control" name="notelp" value="<?php echo $objAkun->notelp; ?>">
     </tr>
     <td>role</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objAkun->role; ?>">
+    <td><input type="text" class="form-control" name="role" value="<?php echo $objAkun->role; ?>">
     </tr>
     <tr>
     <td colspan="2"></td>

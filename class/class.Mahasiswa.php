@@ -25,7 +25,7 @@ class Mahasiswa extends Connection {
 	}
 	public function AddMahasiswa(){
 		$sql = "INSERT INTO mahasiswa (NIM, prodi, semester, tgllahir, username)
-		VALUES ('$this->NIM', '$this->prodi', '$this->semester', '$this->tgllahir', '$this->email', '$this->username')";
+		VALUES ('$this->NIM', '$this->prodi', '$this->semester', '$this->tgllahir', '$this->username')";
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
 		
