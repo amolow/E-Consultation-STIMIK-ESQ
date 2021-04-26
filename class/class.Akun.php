@@ -44,8 +44,8 @@ class Akun extends Connection
 
 public function UpdateAkun(){
 
-  $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
-  VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
+  $sql = "UPDATE akun SET username = '$this->username', password = '$this->password', namadepan = '$this->namadepan', namabelakang = '$this->namabelakang', email = '$this->email', alamat = '$this->alamat', gender = '$this->gender', notelp = '$this->notelp', role = '$this->role' WHERE username = '$this->username'";
+    
     $this->hasil = mysqli_query($this->connection, $sql);
     
     if($this->hasil)
@@ -56,13 +56,13 @@ public function UpdateAkun(){
 
 
 public function DeleteAkun(){
-  $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
-  VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
-    
-    if($this->hasil)
-        $this->message ='Data berhasil dihapus!';
-    else
-        $this->message ='Data gagal dihapus!';
+  $sql = "DELETE FROM akun WHERE username='$this->username'";
+  $this->hasil = mysqli_query($this->connection, $sql);
+  
+  if($this->hasil)
+      $this->message ='Data berhasil dihapus!';
+  else
+      $this->message ='Data gagal dihapus!';
 }
 
 public function SelectAllAkun(){

@@ -46,11 +46,11 @@
             echo '<td>'.$dataAkun->notelp.'</td>';
             echo '<td>'.$dataAkun->role.'</td>';
             echo '<td>
-            <a class="btn btn-warning" href="index.php?p=akun&namadepan='.$dataAkun->username.'"> 
+            <a class="btn btn-warning" href="index.php?p=bookingScreen&username='.$dataAkun->username.'"> 
             Edit 
             </a> | 
             
-            <a class="btn btn-danger" href="index.php?p=deleteakun&namadepan='.$dataAkun->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-danger" href="index.php?p=deleteAkun&username='.$dataAkun->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';
@@ -61,3 +61,4 @@
 ?>
 </div>
 </html>
+

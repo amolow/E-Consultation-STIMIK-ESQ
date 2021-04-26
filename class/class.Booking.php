@@ -1,17 +1,19 @@
 
 <?php
 
-class Booking {
+class Booking extends Connection {
 
-	private $nim;
-	private $idKonsultan;
+	private $NIM;
+	private $IDKonsultan;
     private $waktu;
     private $status;
     private $alasan;
     private $jadwal;
     private $kategori;
     private $tempat;
-    private $actionPlan;
+    private $IDBooking;
+    private $judul;
+    private $isi;
   
   public function __get($atribute) 
   {
@@ -29,76 +31,94 @@ class Booking {
 		}
 	}
 
-  public function AddBooking(){
-    $sql = "INSERT INTO booking (nim, fname, address)
-    VALUES ('$this->nim', '$this->fname', '$this->address')";
-    $this->hasil = mysqli_query($this->connection, $sql);
+
+    public function AddBooking(){
+        $sql = "INSERT INTO booking (NIM, IDKonsultan, waktu, status, alasan, jadwal, kategori, tempat, IDBooking, judul, isi)
+        VALUES ('$this->NIM', '$this->IDKonsultan', '$this->waktu', '$this->status', '$this->alasan', '$this->jadwal', '$this->kategori', '$this->tempat', '$this->IDBooking', '$this->judul', '$this->isi')";
+        $this->hasil = mysqli_query($this->connection, $sql);
+        
+        
+        if($this->hasil)
+            $this->message ='Data berhasil ditambahkan!';
+        else
+            $this->message ='Data gagal ditambahkan!';
+    }
     
     
-    if($this->hasil)
-        $this->message ='Data berhasil ditambahkan!';
-    else
-        $this->message ='Data gagal ditambahkan!';
-}
-
-
-public function UpdateBooking(){
-
-    $sql = "INSERT INTO booking (nim, fname, address)
-    VALUES ('$this->nim', '$this->fname', '$this->address')";
-    $this->hasil = mysqli_query($this->connection, $sql);
+    public function UpdateBooking(){
     
-    if($this->hasil)
-        $this->message ='Data berhasil ditambahkan!';
-    else
-        $this->message ='Data gagal ditambahkan!';
-}
-
-
-public function DeleteBooking(){
-    $sql = "DELETE FROM booking WHERE nim='$this->nim'";
-    $this->hasil = mysqli_query($this->connection, $sql);
+      $sql = "INSERT INTO booking (NIM, IDKonsultan, waktu, status, alasan, jadwal, kategori, tempat, IDBooking, judul, isi)
+      VALUES ('$this->NIM', '$this->IDKonsultan', '$this->waktu', '$this->status', '$this->alasan', '$this->jadwal', '$this->kategori', '$this->tempat', '$this->IDBooking', '$this->judul', '$this->isi')";
+        $this->hasil = mysqli_query($this->connection, $sql);
+        
+        if($this->hasil)
+            $this->message ='Data berhasil ditambahkan!';
+        else
+            $this->message ='Data gagal ditambahkan!';
+    }
     
-    if($this->hasil)
-        $this->message ='Data berhasil dihapus!';
-    else
-        $this->message ='Data gagal dihapus!';
-}
-
-public function SelectAllBooking(){
-    $sql = "SELECT * FROM booking";
-    $result = mysqli_query($this->connection, $sql);
-    $arrResult = Array();
-    $cnt=0;
-
     
-    if(mysqli_num_rows($result) > 0) {
-        while ($data = mysqli_fetch_array($result)) {
-            $objBooking = new Booking();
-            $objBooking->nim=$data['nim'];
-            $objBooking->fname=$data['fname'];
-            $objBooking->address=$data['address' ];
-            $arrResult[$cnt] = $objBooking;
-            $cnt++;
+    public function DeleteBooking(){
+      $sql = "INSERT INTO booking (NIM, IDKonsultan, waktu, status, alasan, jadwal, kategori, tempat, IDBooking, judul, isi)
+      VALUES ('$this->NIM', '$this->IDKonsultan', '$this->waktu', '$this->status', '$this->alasan', '$this->jadwal', '$this->kategori', '$this->tempat', '$this->IDBooking', '$this->judul', '$this->isi')";
+        
+        if($this->hasil)
+            $this->message ='Data berhasil dihapus!';
+        else
+            $this->message ='Data gagal dihapus!';
+    }
+    
+    public function SelectAllBooking(){
+    
+    
+        $sql = "SELECT * FROM booking";
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+        $cnt=0;
+    
+        
+        if(mysqli_num_rows($result) > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                $objBooking = new Booking();
+                $objBooking->NIM=$data['NIM'];
+                $objBooking->IDKonsultan=$data['IDKonsultan'];
+                $objBooking->waktu=$data['waktu'];
+                $objBooking->status=$data['status'];
+                $objBooking->alasan=$data['alasan'];
+                $objBooking->jadwal=$data['jadwal' ];
+                $objBooking->kategori=$data['kategori' ];
+                $objBooking->tempat=$data['tempat' ];
+                $objBooking->judul=$data['judul' ];
+                $objBooking->isi=$data['isi' ];
+                $objBooking->IDBooking=$data['IDBooking' ];
+                $arrResult[$cnt] = $objBooking;
+                $cnt++;
+            }
         }
+        return $arrResult;
     }
-    return $arrResult;
-}
-
-
-
-public function SelectOneBooking(){
-    $sql = "SELECT * FROM booking WHERE nim='$this->nim'";
-    $resultOne = mysqli_query($this->connection, $sql);
-
-
-    if(mysqli_num_rows($resultOne) == 1){
-        $this->hasil = true;
-        $data = mysqli_fetch_assoc($resultOne);
-        $this->fname = $data['fname'];
-        $this->address=$data['address'];
+    
+    
+    
+    public function SelectOneBooking(){
+        $sql = "SELECT * FROM booking WHERE NIM='$this->NIM'";
+        $resultOne = mysqli_query($this->connection, $sql);
+    
+    
+        if(mysqli_num_rows($resultOne) == 1){
+            $this->hasil = true;
+            $data = mysqli_fetch_assoc($resultOne);
+            $this->IDKonsultan = $data['IDKonsultan'];
+            $this->waktu = $data['waktu'];
+            $this->status = $data['status'];
+            $this->alasan = $data['alasan'];
+            $this->jadwal = $data['jadwal'];
+            $this->kategori = $data['kategori'];
+            $this->tempat = $data['tempat'];
+            $this->judul=$data['judul' ];
+            $this->isi=$data['isi' ];
+            $this->IDBooking = $data['IDBooking'];
+        }
+        }
+    
     }
-    }
-  
-}
-?>

@@ -14,4 +14,4 @@ mysqli_select_db($conn, $this->strdbname);
 $this->connection = $conn;
 }
 }
-?>
+?> 

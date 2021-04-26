@@ -25,7 +25,7 @@
           <div class="navbar-nav" style="margin-left: 5em">
             <a class="nav-link text-white" href="index.php?p=home2">HOME</a>
             <a class="nav-link text-white" href="index.php?p=actionPlan">ABOUT US</a>
-            <a class="nav-link text-white" href="index.php?p=profile">PROFILE</a>
+            <a class="nav-link text-white" href="index.php?p=profile&aliolow27">PROFILE</a>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-white"
@@ -48,13 +48,13 @@
                     <a class="dropdown-item text-white" href="index.php?p=home2">Dosen Kaprodi</a>
                   </div>
                 </div>
-                <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Keuangan</a>
+                <a class="dropdown-item text-white" href="index.php?p=crudbooking ">Keuangan</a>
                 <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Kemahasiswaan</a>
                 <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Coaching</a>
             </li>
           </div>
         </div>
-        <a class="nav-link text-white" href="index.php?p=crud">Your Bookings</a>
+        <a class="nav-link text-white" href="index.php?p=listTables">Admin Hub</a>
         <a href="pages/login.php">
           <img src="Asset/logout.png" alt="" id="logout" />
       </a>

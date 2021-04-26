@@ -1,10 +1,12 @@
+
+
     <div class="cont row no-gutters rounded">
             <div class="col-md-4">
               <div class="card ">
                 <img src="Asset/dosen.png" class="card-img-top" alt="...">
                 <div class="card-body">
                 </a>
-                <a href="index.php?p=listConsultant">
+                <a href="index.php?p=listConsultant&c=dosen">
                   <h1 class="card-title">Dosen</h1>
                   </a>
                 </div>
