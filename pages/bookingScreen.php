@@ -1,6 +1,5 @@
 <?php
-require_once
-('./class/class.Akun.php ');
+require_once('./class/class.Akun.php ');
 $objAkun = new Akun();
 
 

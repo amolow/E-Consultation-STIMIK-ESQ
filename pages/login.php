@@ -58,7 +58,7 @@ $_SESSION["valid"] = true;
           <div class="klik">
             <a class="btn text-white" href="../index.php" role="button">Login</a>
             <br />
-            <a class="link text-white" href="../ResetPass/Reset.html">Forgot Password?</a>
+            <a class="link text-white" href="reset.php">Forgot Password?</a>
           </div>
         </form>
       </div>

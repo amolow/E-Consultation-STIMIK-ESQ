@@ -1,35 +1,25 @@
-
 <?php
 
 class Konsultan extends Connection{
-
-	private $departement;
-    private $IDKonsultan;
+	private $IDDepartment;
     private $username;
   
-  public function __get($atribute) 
-  {
-		if (property_exists($this, $atribute)) 
-    {
+  	public function __get($atribute){
+		if (property_exists($this, $atribute)){
 			return $this->$atribute;
 		}
 	}
 
-	public function __set($atribut, $value)
-  {
-		if (property_exists($this, $atribut)) 
-    {
+	public function __set($atribut, $value){
+		if (property_exists($this, $atribut)){
 			$this->$atribut = $value;
 		}
 	}
 
-
-
 	public function AddKonsultan(){
-		$sql = "INSERT INTO konsultan (IDKonsultan, departement, username)
-		VALUES ('$this->IDKonsultan', '$this->departement', '$this->username')";
-		$this->hasil = mysqli_query($this->connection, $sql);
-		
+		$sql = "INSERT INTO konsultan (IDDepartment, username)
+		VALUES ('$this->IDDepartment', '$this->username')";
+		$this->hasil = mysqli_query($this->connection, $sql);		
 		
 		if($this->hasil)
 			$this->message ='Data berhasil ditambahkan!';
@@ -37,10 +27,8 @@ class Konsultan extends Connection{
 			$this->message ='Data gagal ditambahkan!';
 	}
 	
-	
 	public function UpdateKonsultan(){
-	
-	  $sql = "UPDATE konsultan SET IDKonsultan = '$this->IDKonsultan', departement = '$this->departement', username = '$this->username' WHERE IDKonsultan = '$this->IDKonsultan'";
+	  $sql = "UPDATE konsultan SET IDDepartment = '$this->IDDepartment', username = '$this->username' WHERE IDDepartment = '$this->IDDepartment'";
 		
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
@@ -52,7 +40,7 @@ class Konsultan extends Connection{
 	
 	
 	public function DeleteKonsultan(){
-	  $sql = "DELETE FROM konsultan WHERE IDKonsultan='$this->IDKonsultan'";
+	  $sql = "DELETE FROM konsultan WHERE IDDepartment = '$this->IDDepartment'";
 	  $this->hasil = mysqli_query($this->connection, $sql);
 	  
 	  if($this->hasil)
@@ -73,8 +61,7 @@ class Konsultan extends Connection{
 		if(mysqli_num_rows($result) > 0) {
 			while ($data = mysqli_fetch_array($result)) {
 				$objKonsultan = new Konsultan();
-				$objKonsultan->IDKonsultan=$data['IDKonsultan'];
-				$objKonsultan->departement=$data['departement'];
+				$objKonsultan->IDDepartment=$data['department'];
 				$objKonsultan->username=$data['username'];
 				$arrResult[$cnt] = $objKonsultan;
 				$cnt++;
@@ -86,17 +73,15 @@ class Konsultan extends Connection{
 	
 	
 	public function SelectOneKonsultan(){
-		$sql = "SELECT * FROM konsultan WHERE IDKonsultan='$this->IDKonsultan'";
+		$sql = "SELECT * FROM konsultan WHERE IDDepartment='$this->IDDepartment'";
 		$resultOne = mysqli_query($this->connection, $sql);
 	
 	
 		if(mysqli_num_rows($resultOne) == 1){
 			$this->hasil = true;
 			$data = mysqli_fetch_assoc($resultOne);
-			$this->departement = $data['departement'];
 			$this->username = $data['username'];
-
 		}
-		}
-	
 	}
+	
+}

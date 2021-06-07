@@ -28,8 +28,7 @@ class Akun extends Connection
 		}
 	}
 
-
-  public function AddAkun(){
+public function AddAkun(){
     $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
     VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
     $this->hasil = mysqli_query($this->connection, $sql);

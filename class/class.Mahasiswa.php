@@ -2,8 +2,7 @@
 
 class Mahasiswa extends Connection {
 
-	private $NIM;
-	private $prodi;
+	private $IDprodi;
     private $semester;
     private $tgllahir;
     private $username;
@@ -16,16 +15,15 @@ class Mahasiswa extends Connection {
 		}
 	}
 
-	public function __set($atribut, $value)
-  {
-		if (property_exists($this, $atribut)) 
-    {
+	public function __set($atribut, $value){
+		if (property_exists($this, $atribut)){
 			$this->$atribut = $value;
 		}
 	}
+
 	public function AddMahasiswa(){
-		$sql = "INSERT INTO mahasiswa (NIM, prodi, semester, tgllahir, username)
-		VALUES ('$this->NIM', '$this->prodi', '$this->semester', '$this->tgllahir', '$this->username')";
+		$sql = "INSERT INTO mahasiswa (IDprodi, semester, tgllahir, username)
+		VALUES ('$this->IDprodi', '$this->semester', '$this->tgllahir', '$this->username')";
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
 		
@@ -38,7 +36,7 @@ class Mahasiswa extends Connection {
 	
 	public function UpdateMahasiswa(){
 	
-	  $sql = "UPDATE mahasiswa SET NIM = '$this->NIM', prodi = '$this->prodi', semester = '$this->semester', tgllahir = '$this->tgllahir', username = '$this->username' WHERE NIM = '$this->NIM'";
+	  $sql = "UPDATE mahasiswa SET username = '$this->username', IDprodi = '$this->IDprodi', semester = '$this->semester', tgllahir = '$this->tgllahir' WHERE username = '$this->username'";
 		
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
@@ -50,7 +48,7 @@ class Mahasiswa extends Connection {
 	
 	
 	public function DeleteMahasiswa(){
-	  $sql = "DELETE FROM mahasiswa WHERE NIM='$this->NIM'";
+	  $sql = "DELETE FROM mahasiswa WHERE username = '$this->username'";
 	  $this->hasil = mysqli_query($this->connection, $sql);
 	  
 	  if($this->hasil)
@@ -71,11 +69,10 @@ class Mahasiswa extends Connection {
 		if(mysqli_num_rows($result) > 0) {
 			while ($data = mysqli_fetch_array($result)) {
 				$objMahasiswa = new Mahasiswa();
-				$objMahasiswa->NIM=$data['NIM'];
-				$objMahasiswa->prodi=$data['prodi'];
+				$objMahasiswa->username=$data['username' ];
+				$objMahasiswa->IDprodi=$data['IDprodi'];
 				$objMahasiswa->semester=$data['semester'];
 				$objMahasiswa->tgllahir=$data['tgllahir'];
-				$objMahasiswa->username=$data['username' ];
 
 				$arrResult[$cnt] = $objMahasiswa;
 				$cnt++;
