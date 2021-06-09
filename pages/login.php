@@ -1,8 +1,47 @@
-<?php   
-session_start();
-$_SESSION["valid"] = true;
-?>
+<?php
+  require_once('./class/class.Akun.php');
+  if(isset($_POST['btnLogin'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $objAkun = new Akun();
+    
+    $objAkun->hasil = true;
+    $objAkun->ValidateEmail($email);
 
+    if($objAkun->hasil){
+      $ismatch = password_verify($password, $objUser->password);
+
+      if($ismatch){
+        if (!isset($_SESSION)) {
+        session_start();
+        }
+        $_SESSION["username"]= $objUser->usename;
+        $_SESSION["password"]= $objUser->password;
+        $_SESSION["email"]= $objUser->email;
+        $_SESSION["nama"]= $objUser->nama;
+        $_SESSION["role"]= $objUser->role;
+
+        echo "<script>alert('Login sukses');</script>";
+
+        if($objAkun->role == 'penjual'){
+          echo '<script>window.location = "dashboard.php";</script>';
+        }
+        else if($objAkun->role == 'admin'){
+          echo '<script>window.location = "dashboard.php";</script>';
+        }
+      }
+
+      else{
+        echo "<script>alert('Password tidak match');</script>";
+      }
+
+    }
+    else{
+      echo "<script>alert('Email tidak terdaftar');</script>";
+      }
+  }
+?>
 
 <html lang="en">
   <head>
@@ -44,19 +83,19 @@ $_SESSION["valid"] = true;
     <div class="cont">
     <div class="tengah">
       <div class="container">
-        <form>
+        <form method="post">
           <img src="../Asset/toga.png" alt="" />
           <h1>LOGIN</h1>
           <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="email" class="form-control" id="exampleInput" />
+            <label class="col-sm-2 col-form-label"><b>Username</b></label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username" value="<?php echo $objAkun->username;?>" value="<?php echo $objMahasiswa->username;?>">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInput" />
+            <label class="col-sm-2 col-form-label"><b>Username</b></label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username" value="<?php echo $objAkun->password;?>">
           </div>
           <div class="klik">
-            <a class="btn text-white" href="../index.php" role="button">Login</a>
+            <input type="submit" class="btn text-white" value="Login" name="btnLogin">
             <br />
             <a class="link text-white" href="reset.php">Forgot Password?</a>
           </div>
