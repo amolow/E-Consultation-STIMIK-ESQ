@@ -1,48 +1,3 @@
-<?php
-  require_once('./class/class.Akun.php');
-  if(isset($_POST['btnLogin'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    $objAkun = new Akun();
-    
-    $objAkun->hasil = true;
-    $objAkun->ValidateEmail($email);
-
-    if($objAkun->hasil){
-      $ismatch = password_verify($password, $objUser->password);
-
-      if($ismatch){
-        if (!isset($_SESSION)) {
-        session_start();
-        }
-        $_SESSION["username"]= $objUser->usename;
-        $_SESSION["password"]= $objUser->password;
-        $_SESSION["email"]= $objUser->email;
-        $_SESSION["nama"]= $objUser->nama;
-        $_SESSION["role"]= $objUser->role;
-
-        echo "<script>alert('Login sukses');</script>";
-
-        if($objAkun->role == 'penjual'){
-          echo '<script>window.location = "dashboard.php";</script>';
-        }
-        else if($objAkun->role == 'admin'){
-          echo '<script>window.location = "dashboard.php";</script>';
-        }
-      }
-
-      else{
-        echo "<script>alert('Password tidak match');</script>";
-      }
-
-    }
-    else{
-      echo "<script>alert('Email tidak terdaftar');</script>";
-      }
-  }
-?>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -83,16 +38,16 @@
     <div class="cont">
     <div class="tengah">
       <div class="container">
-        <form method="post">
+        <form action="login-action.php" method="post" style="font-family: sans-serif;">
           <img src="../Asset/toga.png" alt="" />
           <h1>LOGIN</h1>
           <div class="form-group">
             <label class="col-sm-2 col-form-label"><b>Username</b></label>
-            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username" value="<?php echo $objAkun->username;?>" value="<?php echo $objMahasiswa->username;?>">
+            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username">
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-form-label"><b>Username</b></label>
-            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username" value="<?php echo $objAkun->password;?>">
+            <label class="col-sm-2 col-form-label"><b>Password</b></label>
+            <input type="password" class="form-control" id="exampleInput" placeholder="Password" name="password">
           </div>
           <div class="klik">
             <input type="submit" class="btn text-white" value="Login" name="btnLogin">

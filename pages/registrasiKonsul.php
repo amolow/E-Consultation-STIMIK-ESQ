@@ -4,7 +4,8 @@
 
 if (isset ($_POST['btnSubmit'])){
     $objAkun->username= $_POST['username'];
-    $objAkun->password= $_POST['password'];
+    $password = $_POST['password'];
+    $objAkun->password= password_hash($password, PASSWORD_DEFAULT);
     $objAkun->namadepan= $_POST['namadepan'];
     $objAkun->namabelakang= $_POST['namabelakang'];
     $objAkun->email= $_POST['email'];
@@ -22,7 +23,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objAkun->message'); </script>";
     if($objAkun->hasil){
-      echo '<script> window.location = "index.php?p=crud";
+      echo '<script> window.location = "index.php?p=listTables";
       </script>';
     }
 }
@@ -49,7 +50,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objKonsultan->message'); </script>";
     if($objKonsultan->hasil){
-      echo '<script> window.location = "index.php?p=crud";
+      echo '<script> window.location = "index.php?p=listTables";
       </script>';
     }
   }
