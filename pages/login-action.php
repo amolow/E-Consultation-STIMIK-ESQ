@@ -30,14 +30,13 @@ require ('../inc.koneksi.php');
 	        $_SESSION["foto"]= $objAkun->foto;
 
 	        echo "<script>alert('Login sukses');</script>";
-	        echo "<script>window.location = '../index.php';</script>";
 
-	        /*if($objUser->role == 'penjual'){
-	          echo '<script>window.location = "dashboard.php";</script>';
+	        if($objAkun->role == 'Mahasiswa'){
+	          echo '<script>window.location = "../index.php?p=crud";</script>';
 	        }
-	        else if($objUser->role == 'admin'){
-	          echo '<script>window.location = "dashboard.php";</script>';
-	        }*/
+	        else if($objAkun->role == 'Konsultan'){
+	          echo '<script>window.location = "../index.php?p=profile";</script>';
+	        }
       	}
 		else{
         echo "<script>alert('Password Salah');</script>";
