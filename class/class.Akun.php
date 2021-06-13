@@ -169,7 +169,7 @@ public function resetPass(){
 
             //if password null
             $newpass = password_hash($this->password, PASSWORD_DEFAULT);
-            $sql = "UPDATE akun SET password='$newpass' WHERE username=$this->username";
+            $sql = "UPDATE akun SET password='$newpass' WHERE username='$this->username'";
             mysqli_query($this->connection, $sql);
 
             return "succes";

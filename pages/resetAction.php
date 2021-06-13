@@ -81,11 +81,11 @@ require ('../inc.koneksi.php');
         <div class="bottom">
           <div class="form-group">
             <label><b>Create new password</b></label>
-            <input type="text" class="form-control" placeholder="New password" name="newpass">
+            <input type="password" class="form-control" placeholder="New password" name="newpass">
           </div>
           <div class="form-group">
             <label><b>Confirm your password</b></label>
-            <input type="text" class="form-control" placeholder="Confirm new password" name="confpass">
+            <input type="password" class="form-control" placeholder="Confirm new password" name="confpass">
           </div>
           <input type="submit" class="btn" value="Send Reset Password" name="btnSubmit">
         </div>

@@ -6,13 +6,19 @@ require ('../inc.koneksi.php');
   $objAkun = new Akun();
 
   if(isset($_POST['btnLogin'])){
+  	
     $objAkun->username = $_POST['username'];
+    $objAkun->password = $_POST['password'];
     
+    if (empty($objAkun->username)|empty($objAkun->password)){
+      echo "<script>alert('Data tidak boleh kosong');</script>";
+    }
+    else{
     $objAkun->hasil = true;
     $objAkun->ValidateUsername($objAkun->username);
 
     if($objAkun->hasil){
-    	$ismatch = password_verify($_POST['password'], $objAkun->password);
+    	$ismatch = password_verify($objAkun->password, $objAkun->password);
 
       	if($ismatch){
 	        if (!isset($_SESSION)) {
@@ -40,6 +46,7 @@ require ('../inc.koneksi.php');
       	}
 		else{
         echo "<script>alert('Password Salah');</script>";
+      	echo "<script>window.location = 'login.php';</script>";
       	}
 
     }
@@ -47,5 +54,6 @@ require ('../inc.koneksi.php');
     	echo "<script>alert('Username tidak terdaftar');</script>";
     	echo "<script>window.location = 'login.php';</script>";
     }
+  	}
   }
 ?>
