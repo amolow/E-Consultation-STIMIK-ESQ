@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 11:30 PM
+-- Generation Time: Jun 14, 2021 at 08:44 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -58,9 +58,10 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`username`, `password`, `namadepan`, `namabelakang`, `email`, `alamat`, `notelp`, `role`, `gender`, `foto`) VALUES
+('12345', '$2y$10$A9NIYX8zGNZxvQWW39bOE.pIAewCsrp0j8gU.bGbBMMUy4feQ2pca', 'Budi', 'Santoso', 'gamedevesqbs@gmail.com', 'Jakarta', '085362017909', 'Konsultan', 'L', NULL),
 ('1910130004', '$2y$10$1W/hbasxk2oC.6LndzZ5C.VUM8fEJSKixM8WHmuc6QYN8Jk7pRLle', 'Amanda', 'Muchsin Chalik', 'a.muchsin.chalik@students.esqbs.ac.id', 'KOta', '085362017909', 'Mahasiswa', 'L', NULL),
 ('1910130014', '$2y$10$jppIslJPHArreWGegO//6ev2eEWCU5YLSrRVlIOmdYBU2esg64xEm', 'Mutiara', 'Pulungan', 'mutiaraplg00@gmail.com', 'Medan', '08216034427', 'Mahasiswa', 'P', NULL),
-('admin', '$2y$10$cVhZ7r4XLFsYmt4PRy4voeLe6jcu6.B31S4GzByr1.Z61NskOVcF.', 'Admin', 'Ekonsultasi', 'amandamuchsinchalik@gmail.com', '-', '085362017909', 'Mahasiswa', '-', NULL);
+('admin', '$2y$10$9hEtM7s7DGoH6jpYMPQb8uqdxxxl3ZOObOxv69T/nq5.sPnjrH1Ve', 'Admin', 'Ekonsultasi', 'amandamuchsinchalik@gmail.com', '-', '085362017909', 'Admin', '-', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,6 +132,13 @@ CREATE TABLE `konsultan` (
   `IDDepartment` int(11) NOT NULL,
   `username` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `konsultan`
+--
+
+INSERT INTO `konsultan` (`IDKonsultan`, `IDDepartment`, `username`) VALUES
+(12, 1, '12345');
 
 -- --------------------------------------------------------
 
@@ -267,7 +275,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `konsultan`
 --
 ALTER TABLE `konsultan`
-  MODIFY `IDKonsultan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IDKonsultan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`

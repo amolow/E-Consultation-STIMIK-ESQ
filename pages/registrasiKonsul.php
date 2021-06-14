@@ -23,7 +23,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objAkun->message'); </script>";
     if($objAkun->hasil){
-      echo '<script> window.location = "index.php?p=listTables";
+      echo '<script> window.location = "index.php";
       </script>';
     }
 }
@@ -50,7 +50,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objKonsultan->message'); </script>";
     if($objKonsultan->hasil){
-      echo '<script> window.location = "index.php?p=listTables";
+      echo '<script> window.location = "index.php";
       </script>';
     }
   }

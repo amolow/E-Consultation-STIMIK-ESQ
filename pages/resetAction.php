@@ -36,7 +36,6 @@ require ('../inc.koneksi.php');
   require_once('../class/class.Akun.php'); 
   
   $username=$_GET["id"];
-  echo "$username";
 
   if(isset($_POST['btnSubmit'])){
     $newpass = $_POST['newpass'];
