@@ -44,10 +44,10 @@ require "inc.koneksi.php";
         session_start();
     }
 
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-    $email = $_SESSION['email'];
-    $role = $_SESSION['role'];
+    // $username = $_SESSION['username'];
+    // $password = $_SESSION['password'];
+    // $email = $_SESSION['email'];
+    // $role = $_SESSION['role'];
 ?>
     
     <?php include("nav.php");?>

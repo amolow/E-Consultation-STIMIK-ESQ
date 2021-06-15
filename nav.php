@@ -1,6 +1,8 @@
 <?php
+  $role = "Mahasiswa";
   if ($role == "Admin"){
 ?>
+
     <!-- NAVBAR ADMIN -->
     <div class="hello solid">
     <nav class="navbar navbar-expand-lg navbar-dark">
