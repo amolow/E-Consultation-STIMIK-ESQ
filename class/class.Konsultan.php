@@ -1,6 +1,7 @@
 <?php
 
 class Konsultan extends Connection{
+	private $IDKonsultan;
 	private $IDDepartment;
     private $username;
   
@@ -17,8 +18,8 @@ class Konsultan extends Connection{
 	}
 
 	public function AddKonsultan(){
-		$sql = "INSERT INTO konsultan (IDDepartment, username)
-		VALUES ('$this->IDDepartment', '$this->username')";
+		$sql = "INSERT INTO konsultan (IDKonsultan,IDDepartment, username)
+		VALUES ('$this->IDKonsultan', '$this->IDDepartment', '$this->username')";
 		$this->hasil = mysqli_query($this->connection, $sql);		
 		
 		if($this->hasil)
@@ -28,7 +29,7 @@ class Konsultan extends Connection{
 	}
 	
 	public function UpdateKonsultan(){
-	  $sql = "UPDATE konsultan SET IDDepartment = '$this->IDDepartment', username = '$this->username' WHERE IDDepartment = '$this->IDDepartment'";
+	  $sql = "UPDATE konsultan SET IDDepartment = '$this->IDKonsultan', '$this->IDDepartment', username = '$this->username' WHERE IDDepartment = '$this->IDDepartment'";
 		
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
@@ -61,7 +62,8 @@ class Konsultan extends Connection{
 		if(mysqli_num_rows($result) > 0) {
 			while ($data = mysqli_fetch_array($result)) {
 				$objKonsultan = new Konsultan();
-				$objKonsultan->IDDepartment=$data['department'];
+				$objKonsultan->IDKonsultan=$data['IDKonsultan'];
+				$objKonsultan->IDDepartment=$data['IDDepartment'];
 				$objKonsultan->username=$data['username'];
 				$arrResult[$cnt] = $objKonsultan;
 				$cnt++;
@@ -70,7 +72,25 @@ class Konsultan extends Connection{
 		return $arrResult;
 	}
 	
-	
+	public function SelectAllKonsultanByUsername($username){					
+		$sql = "SELECT * FROM konsultan where username = 'this->$username' ";			
+		$result = mysqli_query($this->connection, $sql);	
+		
+		$arrResult = Array();
+		$cnt=0;
+		if(mysqli_num_rows($result) > 0){				
+			while ($data = mysqli_fetch_array($result))
+			{
+				$objKonsultan = new Konsultan(); 
+				$objKonsultan->IDKonsultan=$data['IDKonsultan'];
+				$objKonsultan->IDDepartment=$data['IDDepartment'];
+				$objKonsultan->username=$data['username'];
+				$arrResult[$cnt] = $objKonsultan;
+				$cnt++;
+			}
+		}
+		return $arrResult;			
+	}
 	
 	public function SelectOneKonsultan(){
 		$sql = "SELECT * FROM konsultan WHERE IDDepartment='$this->IDDepartment'";

@@ -1,221 +1,34 @@
-		<div class="contsultant">
-             <!--start of card-->
-             <div class="card-container">
-                <div class="upper-container">
-                   <div class="image-container">
-                    <a href="index.php?p=bookingScreen">
-                      <img src="Asset/pfp.jpg" />
-                   </div>
-                </div>
-                <div class="lower-container">
-                   <div>
-                       
-                      <h3>Bapakdo Sen</h3>
-                    </a>    
-                      <h4>Dosen</h4>
-                   </div>
-                   <div class="info">
+<div class="container">  
+  <h4 class="title"><span class="text"><strong>Subordinate List</strong></span></h4>  
+<div class="row">
+<div class="navbar-collapse gallery">
+<ul>
+<?php
+	require_once('./class/class.Konsultan.php'); 	
+		$username = $_SESSION['username'];		
+		$objKonsultan = new Konsultan(); 
+		$arrayResult = $objKonsultan->SelectAllKonsultanByUsername($username);
+		if(count($arrayResult) == 0){
+			echo '<tr><td colspan="5">Tidak ada data!</td></tr>';			
+		}else{	
+			$no = 1;	
+			foreach ($arrayResult as $dataKonsultan) {							
+				if($dataKonsultan->photo != null)
+					echo '<li><img class="images img-rounded" src="upload/'.$dataKonsultan->photo.'" width="180" height="180">';
+				else
+					echo '<li><img class="images img-rounded" src="upload/default.png" width="180" height="180">';				
+				
+				echo'<center><a class="btn btn-info btn-sm" href="dashboardmanager.php?p=subordinate&username='.$dataKonsultan->username.'">
+				<span">'.$dataKonsultan->fname.' '.$dataKonsultan->minit.' '.$dataKonsultan->lname.'</span></a></center>';
+				echo '</li>';	
+				
+    		}
+		}
 
-                    <div class="on">
-                        <img id ="circle" src="Asset/aa-16.png"/>
-                        <h5>Online</h5>
-                    </div>
-
-                    <img id ="stars" src="Asset/aa-17.png"/>
-
-
-                    </div>
-
-                        <div class="line2"></div>
-                            <p>sodales accumsan ligula. Aenean sed diam tristique,
-                            fermentum mi nec, ornare arch.sodales ersique - Lorem
-
-                        </p>
-                   
-                </div>
-             </div>
-             <!--end of card-->
-             <!--start of card-->
-             <div class="card-container">
-                <div class="upper-container">
-                   <div class="image-container">
-                    <a href="../Home/Home.html">
-                      <img src="Asset/pfp.jpg" />
-                   </div>
-                </div>
-                <div class="lower-container">
-                   <div>
-                       
-                      <h3>Bapakdo Sen</h3>
-                    </a>    
-                      <h4>Dosen</h4>
-                   </div>
-                   <div class="info">
-
-                    <div class="on">
-                        <img id ="circle" src="Asset/aa-16.png"/>
-                        <h5>Online</h5>
-                    </div>
-
-                    <img id ="stars" src="Asset/aa-17.png"/>
+?>
+</ul>
+</div>
+</div>
+</div>
 
 
-                    </div>
-
-                        <div class="line2"></div>
-                            <p>sodales accumsan ligula. Aenean sed diam tristique,
-                            fermentum mi nec, ornare arch.sodales ersique - Lorem
-
-                        </p>
-                   
-                </div>
-             </div>
-             <!--end of card-->
-             <!--start of card-->
-             <div class="card-container">
-                <div class="upper-container">
-                   <div class="image-container">
-                    <a href="../Home/Home.html">
-                      <img src="Asset/pfp.jpg" />
-                   </div>
-                </div>
-                <div class="lower-container">
-                   <div>
-                       
-                      <h3>Bapakdo Sen</h3>
-                    </a>    
-                      <h4>Dosen</h4>
-                   </div>
-                   <div class="info">
-
-                    <div class="on">
-                        <img id ="circle" src="Asset/aa-16.png"/>
-                        <h5>Online</h5>
-                    </div>
-
-                    <img id ="stars" src="Asset/aa-17.png"/>
-
-
-                    </div>
-
-                        <div class="line2"></div>
-                            <p>sodales accumsan ligula. Aenean sed diam tristique,
-                            fermentum mi nec, ornare arch.sodales ersique - Lorem
-
-                        </p>
-                   
-                </div>
-             </div>
-             <!--end of card-->
-        </div>
-        <div class="contsultant">
-             <!--start of card-->
-             <div class="card-container">
-                <div class="upper-container">
-                   <div class="image-container">
-                    <a href="../Home/Home.html">
-                      <img src="Asset/pfp.jpg" />
-                   </div>
-                </div>
-                <div class="lower-container">
-                   <div>
-                       
-                      <h3>Bapakdo Sen</h3>
-                    </a>    
-                      <h4>Dosen</h4>
-                   </div>
-                   <div class="info">
-
-                    <div class="on">
-                        <img id ="circle" src="Asset/aa-16.png"/>
-                        <h5>Online</h5>
-                    </div>
-
-                    <img id ="stars" src="Asset/aa-17.png"/>
-
-
-                    </div>
-
-                        <div class="line2"></div>
-                            <p>sodales accumsan ligula. Aenean sed diam tristique,
-                            fermentum mi nec, ornare arch.sodales ersique - Lorem
-
-                        </p>
-                   
-                </div>
-             </div>
-             <!--end of card-->
-             <!--start of card-->
-             <div class="card-container">
-                <div class="upper-container">
-                   <div class="image-container">
-                    <a href="../Home/Home.html">
-                      <img src="Asset/pfp.jpg" />
-                   </div>
-                </div>
-                <div class="lower-container">
-                   <div>
-                       
-                      <h3>Bapakdo Sen</h3>
-                    </a>    
-                      <h4>Dosen</h4>
-                   </div>
-                   <div class="info">
-
-                    <div class="on">
-                        <img id ="circle" src="Asset/aa-16.png"/>
-                        <h5>Online</h5>
-                    </div>
-
-                    <img id ="stars" src="Asset/aa-17.png"/>
-
-
-                    </div>
-
-                        <div class="line2"></div>
-                            <p>sodales accumsan ligula. Aenean sed diam tristique,
-                            fermentum mi nec, ornare arch.sodales ersique - Lorem
-
-                        </p>
-                   
-                </div>
-             </div>
-             <!--end of card-->
-                          <!--start of card-->
-                          <div class="card-container">
-                            <div class="upper-container">
-                               <div class="image-container">
-                                <a href="../Home/Home.html">
-                                  <img src="Asset/pfp.jpg" />
-                               </div>
-                            </div>
-                            <div class="lower-container">
-                               <div>
-                                   
-                                  <h3>Bapakdo Sen</h3>
-                                </a>    
-                                  <h4>Dosen</h4>
-                               </div>
-                               <div class="info">
-            
-                                <div class="on">
-                                    <img id ="circle" src="Asset/aa-16.png"/>
-                                    <h5>Online</h5>
-                                </div>
-            
-                                <img id ="stars" src="Asset/aa-17.png"/>
-            
-            
-                                </div>
-            
-                                    <div class="line2"></div>
-                                        <p>sodales accumsan ligula. Aenean sed diam tristique,
-                                        fermentum mi nec, ornare arch.sodales ersique - Lorem
-            
-                                    </p>
-                               
-                            </div>
-                         </div>
-                         <!--end of card-->
-        </div>
-        </div>
