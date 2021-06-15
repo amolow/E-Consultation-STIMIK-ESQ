@@ -1,9 +1,3 @@
-<?php   
-session_start();
-$_SESSION["valid"] = true;
-?>
-
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,19 +38,19 @@ $_SESSION["valid"] = true;
     <div class="cont">
     <div class="tengah">
       <div class="container">
-        <form>
+        <form action="login-action.php" method="post" style="font-family: sans-serif;">
           <img src="../Asset/toga.png" alt="" />
           <h1>LOGIN</h1>
           <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="email" class="form-control" id="exampleInput" />
+            <label class="col-sm-2 col-form-label"><b>Username</b></label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInput" />
+            <label class="col-sm-2 col-form-label"><b>Password</b></label>
+            <input type="password" class="form-control" id="exampleInput" placeholder="Password" name="password">
           </div>
           <div class="klik">
-            <a class="btn text-white" href="../index.php" role="button">Login</a>
+            <input type="submit" class="btn text-white" value="Login" name="btnLogin">
             <br />
             <a class="link text-white" href="reset.php">Forgot Password?</a>
           </div>

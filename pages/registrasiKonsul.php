@@ -4,7 +4,8 @@
 
 if (isset ($_POST['btnSubmit'])){
     $objAkun->username= $_POST['username'];
-    $objAkun->password= $_POST['password'];
+    $password = $_POST['password'];
+    $objAkun->password= password_hash($password, PASSWORD_DEFAULT);
     $objAkun->namadepan= $_POST['namadepan'];
     $objAkun->namabelakang= $_POST['namabelakang'];
     $objAkun->email= $_POST['email'];
@@ -12,6 +13,38 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->gender= $_POST['gender'];
     $objAkun->notelp= $_POST['notelp'];
     $objAkun->role='Konsultan';
+
+    // Upload File Registrasi//
+    $ukuran_maks_file = 2000000;
+    $tipe_file = @$_FILES['fupload']['type'];
+    $lokasi_file = @$_FILES['fupload']['tmp_name'];
+    $nama_file = @$_FILES['fupload']['name'];
+    $ukuran_file = @$_FILES['fupload']['size'];
+    $folder = './upload/';
+
+    if($tipe_file == "application/pdf"OR
+      $tipe_file == "application/msword"OR
+      $tipe_file == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    {
+      echo "<script>alert('Hanya boleh meng-upload gambar. Pilih file yang lain');</script>";
+      echo "<script>window.location = '?p=upload'</script>";
+      return;
+    }
+
+    if($ukuran_file > $ukuran_maks_file){
+      echo "<script>alert('Ukuran File Terlalu Besar. Pilih file yang lain');</script>";
+      echo "<script>window.location = '?p=upload'</script>";
+      return;
+    }
+
+    $uniquesavename = time() . uniqid(rand());
+    $new_destination = $folder . $uniquesavename . ".png";
+
+    $isSuccessUpload = move_uploaded_file($lokasi_file, $new_destination);
+    if($isSuccessUpload){
+      $objAkun ->foto = $new_destination;
+    }
+    //Batas Akhir//
 
     if(isset($_GET['username'])){
         $objAkun->username = $_GET['username'];
@@ -22,7 +55,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objAkun->message'); </script>";
     if($objAkun->hasil){
-      echo '<script> window.location = "index.php?p=crud";
+      echo '<script> window.location = "index.php?p=listTables";
       </script>';
     }
 }
@@ -49,7 +82,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objKonsultan->message'); </script>";
     if($objKonsultan->hasil){
-      echo '<script> window.location = "index.php?p=crud";
+      echo '<script> window.location = "index.php?p=listTables";
       </script>';
     }
   }
@@ -88,7 +121,7 @@ if (isset ($_POST['btnSubmit'])){
           <div class="pic" style="margin: 10px;">
               <img class="pfp" src="Asset/blankphoto.jpg" alt="..." height="400px" width="350px">
           </div>
-          <a type="button" href="index.php?p=employeelist" class="btn btn-secondary">Change Picture</a>
+          <input type="file" name="fupload"	>
  	    </div>
 
       <div class="information" style="height: 100%; width: 100%; margin: 20px;">
