@@ -1,21 +1,3 @@
-<?php
-  require_once('./class/class.Mail.php');
-  if (isset ($_POST['btnSubmit'])){
-
-    $email = $_POST['email'];
-
-    $to = $email;
-    $name = "Percobaaan";
-    $subject = "RESET PASSWORD";
-    $message = "Halo ".$name.", Berikut Link Reset Pass Akun Kamu <p>
-    Kami dari admin E-Consultation <p>
-    Link berikut merupakan akses untuk Reset Password Akun anda <p>
-    Jangan beritahukan kepada siapapun link berikut karena bersifat rahasia <p>
-    Silankan klik link dibawah <p>";
-
-    Mail::sendMail($to, $name, $subject, $message);
-  }
-?>
     <!-- MY CSS -->
     <link rel="stylesheet" href="./styleReset.css" />
 
@@ -45,22 +27,72 @@
     ></script>
   </head>
 
+<?php
+require ('../inc.koneksi.php');
+?>
+<?php
+  require_once('../class/class.Akun.php');
+  require_once('../class/class.Mail.php'); 
+  $objAkun = new Akun();
+
+  if(isset($_POST['btnSubmit'])){
+    $objAkun->email = $_POST['email'];
+
+    $objAkun->hasil = true;   
+    $objAkun->ValidateEmail($objAkun->email);
+
+    if($objAkun->hasil){
+      
+
+      echo "<script>alert('Konfirmasi Telah dikirim Via email');</script>";
+      $email = $objAkun->email;
+      $namadepan = $objAkun->namadepan;
+      $namabelakang = $objAkun->namabelakang;
+      $username=$objAkun->username;
+      
+      $linkreset = "https://localhost/perancanganweb/E-Consultation-STIMIK-ESQ/pages/resetAction.php?id=$username";
+      $link = "<a href =".$linkreset.">Klik Link Disini</a>";
+
+      $to = $email;
+      $name = $namadepan." ".$namabelakang;
+      $subject = "RESET PASSWORD";
+      $message = '
+      <div class="card text-center" style="text-align: center">
+        <div class="card-header">
+          <img src="https://www.dcu.ie/sites/default/files/media/inline-images/migrated/Icons_V2-01.png">
+            <h4 class="title text-center fs-1 fw-bolder" >E-CONSULTATION STIMI -ESQ<br>Hello '.$name.', <br>
+            Berikut Link Konfirmasimu</h4>
+                <p>Isi Email<br></p>
+                ' . $link .'
+        </div>
+      </div>';
+      
+      Mail::sendMail($to, $name, $subject, $message);
+      
+      
+    }
+    else{
+      echo "<script>alert('Email tidak terdaftar');</script>";
+    }
+  }
+
+?>
 
   <body class="main">
     <div class="cont"></div>
     <div class="tengah">
-      <div class="container">
+      <div class="container" style="font-family: sans-serif;">
         <h1>Forgot Password</h1>
         <h5>
           Enter the email you signded up with below and we will send you a link
           <br />to reset your password
         </h5>
 
-        <form action="" method="Post">
+        <form method="Post">
         <div class="bottom">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp" name= "email" value="">
+            <input type="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp" name= "email">
           </div>
           <input type="submit" class="btn" value="Send Reset Password" name="btnSubmit">
         </div>

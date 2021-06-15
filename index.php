@@ -1,6 +1,7 @@
 <?php
 require "inc.koneksi.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,32 +38,37 @@ require "inc.koneksi.php";
 
 
   <body class="bagc">
+<?php 
+
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
+    $email = $_SESSION['email'];
+    $role = $_SESSION['role'];
+?>
     
     <?php include("nav.php");?>
 
+    <?php
+    $pages_dir = 'pages';
+    if (!empty($_GET['p'])) {
+        $pages = scandir($pages_dir, 0);
+        unset($pages[0], $pages[1]);
 
+        $p = $_GET['p'];
 
-
-
-
-
-<?php
-$pages_dir = 'pages';
-if (!empty($_GET['p'])) {
-    $pages = scandir($pages_dir, 0);
-    unset($pages[0], $pages[1]);
-
-    $p = $_GET['p'];
-
-    if (in_array($p . '.php', $pages)) {
-        include($pages_dir . '/' . $p .  '.php');
+        if (in_array($p . '.php', $pages)) {
+            include($pages_dir . '/' . $p .  '.php');
+        } else {
+            echo "Halaman Tidak Ditemukan";
+        }
     } else {
-        echo "Halaman Tidak Ditemukan";
+        include "./pages/home2.php";
     }
-} else {
-    include "./pages/home2.php";
-}
-?>
+    ?>
 
 
 

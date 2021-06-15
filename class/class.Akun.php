@@ -112,7 +112,72 @@ public function SelectOneAkun(){
         $this->notelp = $data['notelp'];
         $this->role = $data['role'];
     }
-    }
+}
+
+public function ValidateUsername($username){
+
+        $sql = "SELECT * FROM akun WHERE username = '$username'";
+
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows ($result) == 1){
+            $this->hasil = true;
+            $data = mysqli_fetch_assoc($result);
+            $this->username = $data['username'];
+            $this->password = $data['password'];
+            $this->namadepan = $data['namadepan'];
+            $this->namabelakang = $data['namabelakang'];
+            $this->email = $data['email'];
+            $this->alamat = $data['alamat'];
+            $this->notelp = $data['notelp'];
+            $this->role = $data['role'];
+            $this->gender = $data['gender'];
+            $this->foto = $data['foto'];
+            
+        }
+        else{
+            $this->hasil = false;
+        }
+} 
+
+public function ValidateEmail($email){
+
+        $sql = "SELECT * FROM akun WHERE email = '$email'";
+
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows ($result) == 1){
+            $this->hasil = true;
+            $data = mysqli_fetch_assoc($result);
+            $this->username = $data['username'];
+            $this->password = $data['password'];
+            $this->namadepan = $data['namadepan'];
+            $this->namabelakang = $data['namabelakang'];
+            $this->email = $data['email'];
+            $this->alamat = $data['alamat'];
+            $this->notelp = $data['notelp'];
+            $this->role = $data['role'];
+            $this->gender = $data['gender'];
+            $this->foto = $data['foto'];
+            
+        }
+        else{
+            $this->hasil = false;
+        }
+}
+
+public function resetPass(){
+    try {
+
+            //if password null
+            $newpass = password_hash($this->password, PASSWORD_DEFAULT);
+            $sql = "UPDATE akun SET password='$newpass' WHERE username='$this->username'";
+            mysqli_query($this->connection, $sql);
+
+            return "succes";
+        } catch (PDOException $e) {
+            return "failed";
+        }
+}
+
 
 public function ValidateUsername($username){
 
