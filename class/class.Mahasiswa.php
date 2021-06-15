@@ -2,7 +2,8 @@
 
 class Mahasiswa extends Connection {
 
-	private $IDprodi;
+	private $IDMahasiswa;
+	private $IDProdi;
     private $semester;
     private $tgllahir;
     private $username;
@@ -22,8 +23,8 @@ class Mahasiswa extends Connection {
 	}
 
 	public function AddMahasiswa(){
-		$sql = "INSERT INTO mahasiswa (IDprodi, semester, tgllahir, username)
-		VALUES ('$this->IDprodi', '$this->semester', '$this->tgllahir', '$this->username')";
+		$sql = "INSERT INTO mahasiswa (IDMahasiswa, IDprodi, semester, tgllahir, username)
+		VALUES ('$this->IDMahasiswa', '$this->IDprodi', '$this->semester', '$this->tgllahir', '$this->username')";
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
 		
@@ -36,7 +37,7 @@ class Mahasiswa extends Connection {
 	
 	public function UpdateMahasiswa(){
 	
-	  $sql = "UPDATE mahasiswa SET username = '$this->username', IDprodi = '$this->IDprodi', semester = '$this->semester', tgllahir = '$this->tgllahir' WHERE username = '$this->username'";
+	  $sql = "UPDATE mahasiswa SET username = '$this->username', '$this->IDMahasiswa', IDprodi = '$this->IDprodi', semester = '$this->semester', tgllahir = '$this->tgllahir' WHERE username = '$this->username'";
 		
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
@@ -69,7 +70,8 @@ class Mahasiswa extends Connection {
 		if(mysqli_num_rows($result) > 0) {
 			while ($data = mysqli_fetch_array($result)) {
 				$objMahasiswa = new Mahasiswa();
-				$objMahasiswa->username=$data['username' ];
+				$objMahasiswa->username=$data['username'];
+				$objMahasiswa->IDMahasiswa=$data['IDMahasiswa'];
 				$objMahasiswa->IDprodi=$data['IDprodi'];
 				$objMahasiswa->semester=$data['semester'];
 				$objMahasiswa->tgllahir=$data['tgllahir'];
@@ -92,6 +94,7 @@ class Mahasiswa extends Connection {
 			$this->hasil = true;
 			$data = mysqli_fetch_assoc($resultOne);
 			$this->prodi = $data['prodi'];
+			$this->IDMahasiswa = $data['IDMahasiswa'];
 			$this->semester = $data['semester'];
 			$this->tgllahir = $data['tgllahir'];
 			$this->username = $data['username'];

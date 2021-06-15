@@ -9,8 +9,8 @@
 <a class="btn btn-primary" href="index.php?p=addMahasiswa">Add</a>
 <table class="table table-bordered">
 <tr>
-<th>No.</th>
-<th>NIM</th>
+<th>ID Mahasiswa</th>
+<th>IDProdi</th>
 <th>Prodi</th>
 <th>Semester</th>
 <th>tgl Lahir</th>

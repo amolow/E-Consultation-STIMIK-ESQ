@@ -55,7 +55,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objAkun->message'); </script>";
     if($objAkun->hasil){
-      echo '<script> window.location = "index.php?p=listTables";
+      echo '<script> window.location = "dashboardAdmin.php?p=listTables";
       </script>';
     }
 }
@@ -84,7 +84,7 @@ if (isset ($_POST['btnSubmit'])){
     }
     echo "<script> alert('$objMahasiswa->message'); </script>";
     if($objMahasiswa->hasil){
-      echo '<script> window.location = "index.p=listTables";
+      echo '<script> window.location = "dashboardAdmin.p=listTables";
       </script>';
     }
   }
@@ -179,7 +179,7 @@ if (isset ($_POST['btnSubmit'])){
             </div>
               		
             <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
-            <a href="index.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
+            <a href="dashboardAdmin.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
         </form>
         </div>
  

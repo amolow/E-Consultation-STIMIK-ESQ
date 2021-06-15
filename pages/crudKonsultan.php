@@ -33,7 +33,7 @@
             echo '<tr>';
             echo '<td>'.$no.'</td>';
             echo '<td>'.$dataKonsultan->IDKonsultan.'</td>';
-            echo '<td>'.$dataKonsultan->departement.'</td>';
+            echo '<td>'.$dataKonsultan->IDDepartment.'</td>';
             echo '<td>'.$dataKonsultan->username.'</td>';
 
             echo '<td>

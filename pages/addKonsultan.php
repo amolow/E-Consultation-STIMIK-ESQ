@@ -6,7 +6,7 @@ $objKonsultan = new Konsultan();
 
 if (isset ($_POST['btnSubmit'])){
     $objKonsultan->IDKonsultan= $_POST['IDKonsultan'];
-    $objKonsultan->departement= $_POST['departement'];
+    $objKonsultan->department= $_POST['department'];
     $objKonsultan->IDKonsultan= $_POST['IDKonsultan'];
 
     if(isset($_GET['IDKonsultan'])){
@@ -47,9 +47,9 @@ if (isset ($_POST['btnSubmit'])){
     </td>
     </tr>
     <tr>
-    <td>Departement</td>
+    <td>department</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="password" value="<?php echo $objKonsultan->departement; ?>">
+    <td><input type="text" class="form-control" name="password" value="<?php echo $objKonsultan->department; ?>">
     </tr>
     <td>username</td>
     <td>:</td>

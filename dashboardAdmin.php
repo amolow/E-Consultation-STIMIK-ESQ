@@ -48,19 +48,8 @@
 
 
   <body class="bagc">
-<?php 
-
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-
-    // $username = $_SESSION['username'];
-    // $password = $_SESSION['password'];
-    // $email = $_SESSION['email'];
-    // $role = $_SESSION['role'];
-?>
     
-    <?php include("nav.php");?>
+    <?php include("navAdmin.php");?>
 
 
 
