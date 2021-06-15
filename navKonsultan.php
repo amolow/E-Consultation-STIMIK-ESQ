@@ -1,5 +1,4 @@
-    <!-- NAVBAR -->
-    <div class="hello solid">
+<div class="hello solid">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <img src="Asset/esq.png" alt="" />
@@ -21,20 +20,21 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-family:Roboto;">
           <div class="navbar-nav" style="margin-left: 5em">
             <a class="nav-link text-white" href="dashboardKonsultan.php?p=home2">HOME</a>
             <a class="nav-link text-white" href="dashboardKonsultan.php?p=aboutus">ABOUT US</a>
-            <a class="nav-link text-white" href="dashboardKonsultan.php?p=profile">PROFILE</a>
+            <a class="nav-link text-white" href="dashboardKonsultan.php?p=actionPlan">ACTION PLAN</a>
+            <a class="nav-link text-white" href="dashboardKonsultan.php?p=actionPlan">BOOKING</a>
           </div>
         </div>
-        <a class="nav-link text-white" href="dashboardKonsultan.php?p=actionPlan">Action Plan</a>
 
-        <a class="nav-link text-white" href="dashboardKonsultan.php?p=viewBookings">Lihat Booking</a>
+        <a href="dashboardKonsultan.php?p=profile&aliolow27">
+          <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" />
+        </a>
         <a href="pages/login.php">
-          <img src="Asset/logout.png" alt="" id="logout" />
-      </a>
+          <img src="Asset/logout.png" alt="" id="logout" style="width:40px;"/>
+        </a>
       </div>
     </nav>
-    <!-- PENUTUP NAVBAR -->
   </div>

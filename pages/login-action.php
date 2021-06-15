@@ -14,7 +14,7 @@ require ('../inc.koneksi.php');
     if($objAkun->hasil){
     	$ismatch = password_verify($_POST['password'], $objAkun->password);
 
-      	if(!($ismatch)){
+      	if($ismatch){
 	        if (!isset($_SESSION)) {
 	        session_start();
 	        }
