@@ -387,7 +387,7 @@ h4 {
   display: flex;
 }
 .leftContentMain2 {
-  width: 40vw;
+  width: 100%;
 }
 
 .leftContentMain2 h2 {

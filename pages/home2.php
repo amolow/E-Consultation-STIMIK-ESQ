@@ -13,8 +13,7 @@
         </div>
 
         <div>
-            
-            <img src="Asset/counselling2.png" width= "900">
+            <img src="Asset/counselling2.png" width="100%">
         </div>
     </div>
 </div>

@@ -29,10 +29,10 @@
           </div>
         </div>
 
-        <a href="dashboardKonsultan.php?p=profile&aliolow27">
+        <a href="dashboardKonsultan.php?p=profile">
           <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" />
         </a>
-        <a href="pages/login.php">
+        <a href="index.php">
           <img src="Asset/logout.png" alt="" id="logout" style="width:40px;"/>
         </a>
       </div>

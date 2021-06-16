@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 08:44 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 16, 2021 at 08:30 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ekonsultasi`
+-- Database: `ekonsul`
 --
 
 -- --------------------------------------------------------
@@ -58,10 +58,15 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`username`, `password`, `namadepan`, `namabelakang`, `email`, `alamat`, `notelp`, `role`, `gender`, `foto`) VALUES
+('', '$2y$10$wtC.bkyw/z9inPhmg7UlAObL8K63mCBa/zcuYqjWnN8SGWYrxUFiO', '', '', '', '', '', 'Konsultan', '-', NULL),
 ('12345', '$2y$10$A9NIYX8zGNZxvQWW39bOE.pIAewCsrp0j8gU.bGbBMMUy4feQ2pca', 'Budi', 'Santoso', 'gamedevesqbs@gmail.com', 'Jakarta', '085362017909', 'Konsultan', 'L', NULL),
+('12fdsafdas', '$2y$10$cJzWr6f8pc27.R8QoX7s7u8Z.9be5z7nplfKAOC2o6Ly6qoTxqsWK', 'Muchsing', 'Konsultang', 'ed211', 'dqdwqqwdqwd', '123123', 'Konsultan', 'L', NULL),
 ('1910130004', '$2y$10$1W/hbasxk2oC.6LndzZ5C.VUM8fEJSKixM8WHmuc6QYN8Jk7pRLle', 'Amanda', 'Muchsin Chalik', 'a.muchsin.chalik@students.esqbs.ac.id', 'KOta', '085362017909', 'Mahasiswa', 'L', NULL),
 ('1910130014', '$2y$10$jppIslJPHArreWGegO//6ev2eEWCU5YLSrRVlIOmdYBU2esg64xEm', 'Mutiara', 'Pulungan', 'mutiaraplg00@gmail.com', 'Medan', '08216034427', 'Mahasiswa', 'P', NULL),
-('admin', '$2y$10$9hEtM7s7DGoH6jpYMPQb8uqdxxxl3ZOObOxv69T/nq5.sPnjrH1Ve', 'Admin', 'Ekonsultasi', 'amandamuchsinchalik@gmail.com', '-', '085362017909', 'Admin', '-', NULL);
+('222', '$2y$10$z0ZSu2fYNcmHSmEpAJ9Jie2Vk.NalG.FUOvInuFZ0VmnYJkNcH5ly', 'hu', 'tao', '', '123213we1e1', '213214123', 'Mahasiswa', 'L', NULL),
+('admin', '$2y$10$9hEtM7s7DGoH6jpYMPQb8uqdxxxl3ZOObOxv69T/nq5.sPnjrH1Ve', 'Admin', 'Ekonsultasi', 'amandamuchsinchalik@gmail.com', '-', '085362017909', 'Admin', '-', NULL),
+('konsul', '$2y$10$z8BgI.af9gRBhdP2xjXWTuIBQ0g4wkjKIm.08bYYvweNDxZhvbQpu', 'konsul', 'tan', 'konsulta', '24sdadasdadwqd', '213213', 'Konsultan', 'L', NULL),
+('teads', '$2y$10$v82jFnkxhRFYZnDgTVudAOdjrtYDumK9CvtS7Z71hMGvmgGrhjCqq', 'Mutiara', 'Persada', 'dwqdas', 'asdsadsasada', '12321312', 'Konsultan', 'P', NULL);
 
 -- --------------------------------------------------------
 
@@ -138,7 +143,10 @@ CREATE TABLE `konsultan` (
 --
 
 INSERT INTO `konsultan` (`IDKonsultan`, `IDDepartment`, `username`) VALUES
-(12, 1, '12345');
+(12, 1, '12345'),
+(15, 2, 'konsul'),
+(16, 3, 'teads'),
+(17, 2, '12fdsafdas');
 
 -- --------------------------------------------------------
 
@@ -182,6 +190,68 @@ INSERT INTO `prodi` (`IDProdi`, `NamaProdi`) VALUES
 (1, 'Business Management'),
 (2, 'Sistem Informasi'),
 (3, 'Ilmu Komputer');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `vw_consultant`
+-- (See below for the actual view)
+--
+CREATE TABLE `vw_consultant` (
+`username` varchar(30)
+,`namadepan` varchar(30)
+,`namabelakang` varchar(30)
+,`email` varchar(50)
+,`alamat` varchar(50)
+,`notelp` varchar(12)
+,`role` varchar(30)
+,`gender` varchar(1)
+,`foto` longblob
+,`IDKonsultan` int(11)
+,`IDDepartment` int(11)
+,`Namakategori` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `vw_mahasiswa`
+-- (See below for the actual view)
+--
+CREATE TABLE `vw_mahasiswa` (
+`username` varchar(30)
+,`namadepan` varchar(30)
+,`namabelakang` varchar(30)
+,`email` varchar(50)
+,`alamat` varchar(50)
+,`notelp` varchar(12)
+,`role` varchar(30)
+,`gender` varchar(1)
+,`foto` longblob
+,`IDMahasiswa` int(11)
+,`IDprodi` int(11)
+,`semester` int(11)
+,`tgllahir` date
+,`NamaProdi` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `vw_consultant`
+--
+DROP TABLE IF EXISTS `vw_consultant`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_consultant`  AS SELECT `a`.`username` AS `username`, `a`.`namadepan` AS `namadepan`, `a`.`namabelakang` AS `namabelakang`, `a`.`email` AS `email`, `a`.`alamat` AS `alamat`, `a`.`notelp` AS `notelp`, `a`.`role` AS `role`, `a`.`gender` AS `gender`, `a`.`foto` AS `foto`, `b`.`IDKonsultan` AS `IDKonsultan`, `b`.`IDDepartment` AS `IDDepartment`, `c`.`Namakategori` AS `Namakategori` FROM ((`akun` `a` left join `konsultan` `b` on(`b`.`username` = `a`.`username`)) left join `kategori` `c` on(`c`.`IDKategori` = `b`.`IDDepartment`)) WHERE `a`.`role` = 'Konsultan' ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `vw_mahasiswa`
+--
+DROP TABLE IF EXISTS `vw_mahasiswa`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_mahasiswa`  AS SELECT `a`.`username` AS `username`, `a`.`namadepan` AS `namadepan`, `a`.`namabelakang` AS `namabelakang`, `a`.`email` AS `email`, `a`.`alamat` AS `alamat`, `a`.`notelp` AS `notelp`, `a`.`role` AS `role`, `a`.`gender` AS `gender`, `a`.`foto` AS `foto`, `b`.`IDMahasiswa` AS `IDMahasiswa`, `b`.`IDprodi` AS `IDprodi`, `b`.`semester` AS `semester`, `b`.`tgllahir` AS `tgllahir`, `c`.`NamaProdi` AS `NamaProdi` FROM ((`akun` `a` left join `mahasiswa` `b` on(`b`.`username` = `a`.`username`)) left join `prodi` `c` on(`c`.`IDProdi` = `b`.`IDprodi`)) WHERE `a`.`role` = 'Mahasiswa' ;
 
 --
 -- Indexes for dumped tables
@@ -275,13 +345,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `konsultan`
 --
 ALTER TABLE `konsultan`
-  MODIFY `IDKonsultan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IDKonsultan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `IDMahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `IDMahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `prodi`

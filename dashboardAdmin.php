@@ -52,11 +52,6 @@
     <?php include("navAdmin.php");?>
 
 
-
-
-
-
-
 <?php
 $pages_dir = 'pages';
 if (!empty($_GET['p'])) {

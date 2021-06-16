@@ -1,15 +1,4 @@
-<?php 
-	if (!isset($_SESSION)) {
-		session_start();
-	}
-	if(isset($_SESSION["role"])){		
-		if($_SESSION["role"] == 'employee')
-			echo '<script>window.location = "dashboardemployee.php";</script>';
-		else if($_SESSION["role"] == 'manager')
-			echo '<script>window.location = "dashboardmanager.php";</script>';
-		else if($_SESSION["role"] == 'admin')
-			echo '<script>window.location = "dashboardadmin.php";</script>';
-	}	
+<?php 	
  	require "inc.koneksi.php";		
 ?>
 <!DOCTYPE html>

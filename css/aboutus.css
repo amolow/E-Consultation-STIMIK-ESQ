@@ -1,0 +1,244 @@
+
+body{width:100%;}
+
+.logo {
+  padding-top: 10px;
+}
+
+.logo h3 {
+  font-size: 28px;
+}
+
+.logo p {
+  line-height: 100%;
+  margin-top: -7px;
+}
+
+.navbar-nav {
+  font-size: 20px;
+    z-index: 5;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropright:hover > .dropdown-menu {
+  background-color: #4971b7;
+  display: block;
+    z-index: 5;
+}
+
+.dropdown-toggle {
+  left: 10px;
+  background-color: transparent;
+    z-index: 5;
+}
+
+.dropdown-menu {
+  color: white;
+  font-family: "Futura";
+  z-index: 5;
+}
+
+
+
+
+
+h5
+{
+	text-align: center;
+}
+
+.box1{
+  background-image: url("qq-31.png");
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  padding: 50px;
+}
+.box1 .tulisan {
+  text-align: center;
+}
+.box1 .tulisan h1{
+  color: white;
+  margin-bottom: 3px;
+}
+.box1 .garisPutih {
+  width: 200px;
+  height: 5px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.box1 .tulisan p{
+  font-style: italic;
+  color: white;
+}
+
+
+.box2{
+  background-image: url("qq-32.png");
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  padding: 50px; 
+}
+.box2 .tulisan{
+  width: 100%;
+  text-align: center;
+}
+.box2 .tulisan h1{
+  color: white;
+  margin-bottom: 3px;
+}
+.box2 .garisPutih{
+  width: 500px;
+  height: 5px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 30px;  
+}
+.box2 .profil { 
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+}
+.box2 .profil .poto{
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+}
+.box2 .profil .profil-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+
+}
+.box2 .profil .name{
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+}
+.box2 .profil .profil-image img{
+  width: 100%;
+}
+
+
+.box3{
+  background-image: url("qq-33.png");
+  height: 600px;
+  background-size: cover;
+  
+}
+.box3 .tulisan {
+  width: 100%;
+  text-align: center;
+}
+.box3 .tulisan h1{
+  color: black;
+  margin-bottom: 3px;
+  margin-top: 50px;
+}
+.box3 .garisHitam {
+  width: 100px;
+  height: 5px;
+  background-color: black;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.box3 .biru{
+  background: #7bb9d4;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+
+}
+.box3 .biru p{
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+.box3 .putih{
+  background: white;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+
+}
+.box3 .putih p{
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+
+.box4{
+  background-image: url("qq-34.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  padding: 50px;
+}
+.box4 .tulisan {
+  width: 100%;
+  text-align: center;
+}
+.box4 .tulisan h1{
+  color: white;
+  margin-bottom: 3px;
+}
+.box4 .garisPutih {
+  width: 200px;
+  height: 5px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.box4 .tulisan .kotak{
+  width: 100%;
+  display: flex;
+  color: white;
+}
+.box4 .tulisan .kotak .col1{
+  width: 800px;
+  height:700px; 
+}
+.box4 .tulisan .kotak .col2{
+  width: 800px;
+  height: 700px;
+}
+.box4 .kotak .col1 {
+  text-align: left;
+  padding: 10px;
+}
+.box4 .kotak .col2{
+  padding: 10px;
+  text-align: right;
+  color: white;
+}
+.box4 .kotak .col2 .garis{
+  width: 300px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 20px;
+  margin-left: 200px;
+}
+.box4 .kotak .col2 .social{
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  margin-right: 5px;
+}
+.box4 .kotak .col2 .social img{
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
