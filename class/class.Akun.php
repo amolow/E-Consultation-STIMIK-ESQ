@@ -12,7 +12,9 @@ class Akun extends Connection
     private $notelp= "";
     private $role= "";
     private $hasil = false;
-  
+    private $tgllahir="";
+    private $foto="";
+
   public function __get($atribute) 
   {
 		if (property_exists($this, $atribute)) 
@@ -30,8 +32,8 @@ class Akun extends Connection
 	}
 
 public function AddAkun(){
-    $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
-    VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
+    $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role,foto, tgllahir)
+    VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role', '$this->foto', '$this->tgllahir')";
     $this->hasil = mysqli_query($this->connection, $sql);
     
     
@@ -132,6 +134,7 @@ public function ValidateUsername($username){
             $this->role = $data['role'];
             $this->gender = $data['gender'];
             $this->foto = $data['foto'];
+            $this->tgllahir = $data['tgllahir'];
             
         }
         else{
@@ -157,7 +160,7 @@ public function ValidateEmail($email){
             $this->role = $data['role'];
             $this->gender = $data['gender'];
             $this->foto = $data['foto'];
-            
+            $this->tgllahir = $data['tgllahir'];
         }
         else{
             $this->hasil = false;

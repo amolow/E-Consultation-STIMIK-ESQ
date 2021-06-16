@@ -13,6 +13,7 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->gender= $_POST['gender'];
     $objAkun->notelp= $_POST['notelp'];
     $objAkun->role='Mahasiswa';
+    $objAkun->tgllahir =$_POST['tgllahir'];
 
     // Upload File Registrasi//
     $ukuran_maks_file = 2000000;
@@ -119,77 +120,79 @@ if (isset ($_POST['btnSubmit'])){
 
 <div class="heading" style="width:100%; height:100%; text-align: center;">
   <p><b style="font-size:40px;">Register</b></p>
-  <div class="media clearfix" style="height:100%; margin:30px;">
-      <div class="left">
-          <div class="pic" style="margin: 10px;">
-              <img class="pfp" src="Asset/blankphoto.jpg" alt="..." height="400px" width="350px">
-          </div>
-           <input type="file" name="fupload"	>
- 	    </div>
-
-      <div class="information" style="height: 100%; width: 100%; margin: 20px;">
-        <form action="" method="post">  
-            <div class="input-group mb-3">
-              <label class="col-sm-2 col-form-label"><b>Username (NIM)</b></label>
-              <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $objAkun->username;?>" value="<?php echo $objMahasiswa->username;?>">
-              <label class="col-sm-3 col-form-label"><b>Password</b></label>
-              <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $objAkun->password;?>">
+  <form action="" method="post" enctype="multipart/form-data">  
+    <div class="media clearfix" style="height:100%; margin:30px;">
+        <div class="left">
+            <div class="pic" style="margin: 10px;">
+                <img class="pfp" src="Asset/blankphoto.jpg" alt="..." height="400px" width="350px" id="bingfoto">
             </div>
-
-            <div class="input-group mb-3">
-              <label class="col-sm-2 col-form-label"><b>Nama Depan</b></label>
-              <input type="text" class="form-control" placeholder="Nama Depan" name="namadepan" value="<?php echo $objAkun->namadepan;?>">
-              <label class="col-sm-3 col-form-label"><b>Nama Belakang</b></label>
-              <input type="text" class="form-control" placeholder="Nama Belakang" name="namabelakang" value="<?php echo $objAkun->namabelakang;?>">
-            </div>
-
-            <div class="input-group mb-3">
-              <label class="col-sm-2 col-form-label"><b>Email</b></label>
-              <input type="text" class="form-control" placeholder="Email" name="email" value="<?php echo $objAkun->email;?>">
-              <label class="col-sm-3 col-form-label"><b>Tanggal Lahir</b></label>
-              <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgllahir" value="<?php echo $objMahasiswa->tgllahir;?>">
-            </div>
-
-            <div class="input-group mb-3">
-              <label class="col-sm-2 col-form-label"><b>Semester</b></label>
-              <input type="text" class="form-control" placeholder="Ex : 1" name="semester" value="<?php echo $objMahasiswa->semester;?>">
-              <label class="col-sm-3 col-form-label"><b>Jenis Kelamin</b></label>
-              <select class="form-control" name="gender" value="<?php echo $objAkun->gender;?>">
-                <option selected>- Pilih -</option>
-                <option value="L">Laki-Laki</option>
-                <option value="P">Perempuan</option>
-              </select>
-            </div>
-
-            <div class="input-group mb-3">    
-              <label class="col-sm-2 col-form-label"><b>Program Studi</b></label>
-              <select class="form-control" name="IDprodi" value="<?php echo $objMahasiswa->IDprodi;?>">
-                <option selected>- Pilih -</option>
-                <option value="1">Business Management</option>
-                <option value="2">Business Information System</option>
-                <option value="3">Computer Science</option>
-              </select>
-              <label class="col-sm-3 col-form-label"><b>No Handphone</b></label>
-              <input type="text" class="form-control" placeholder="08XX XXXX XXXX" name="notelp" value="<?php echo $objAkun->notelp; ?>">
-            </div>
-
-            <div class="input-group mb-3">
-              <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  name="alamat" value="<?php echo $objAkun->alamat; ?>"></textarea>
-            </div>
-              		
-            <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
-            <a href="dashboardAdmin.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
-        </form>
+            <input type="file" name="fupload" id="upfoto"	>
         </div>
- 
 
-            <style type="text/css">
-              h1{
-                padding-top: 480px;
+        <div class="information" style="height: 100%; width: 100%; margin: 20px;">
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label"><b>Username (NIM)</b></label>
+                <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $objAkun->username;?>" value="<?php echo $objMahasiswa->username;?>">
+                <label class="col-sm-3 col-form-label"><b>Password</b></label>
+                <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $objAkun->password;?>">
+              </div>
 
-                font-size: 30px;
-              }
-            </style>
-  </div>
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label"><b>Nama Depan</b></label>
+                <input type="text" class="form-control" placeholder="Nama Depan" name="namadepan" value="<?php echo $objAkun->namadepan;?>">
+                <label class="col-sm-3 col-form-label"><b>Nama Belakang</b></label>
+                <input type="text" class="form-control" placeholder="Nama Belakang" name="namabelakang" value="<?php echo $objAkun->namabelakang;?>">
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label"><b>Email</b></label>
+                <input type="text" class="form-control" placeholder="Email" name="email" value="<?php echo $objAkun->email;?>">
+                <label class="col-sm-3 col-form-label"><b>Tanggal Lahir</b></label>
+                <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgllahir" value="<?php echo $objMahasiswa->tgllahir;?>">
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label"><b>Semester</b></label>
+                <input type="text" class="form-control" placeholder="Ex : 1" name="semester" value="<?php echo $objMahasiswa->semester;?>">
+                <label class="col-sm-3 col-form-label"><b>Jenis Kelamin</b></label>
+                <select class="form-control" name="gender" value="<?php echo $objAkun->gender;?>">
+                  <option selected>- Pilih -</option>
+                  <option value="L">Laki-Laki</option>
+                  <option value="P">Perempuan</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">    
+                <label class="col-sm-2 col-form-label"><b>Program Studi</b></label>
+                <select class="form-control" name="IDprodi" value="<?php echo $objMahasiswa->IDprodi;?>">
+                  <option selected>- Pilih -</option>
+                  <option value="1">Business Management</option>
+                  <option value="2">Business Information System</option>
+                  <option value="3">Computer Science</option>
+                </select>
+                <label class="col-sm-3 col-form-label"><b>No Handphone</b></label>
+                <input type="text" class="form-control" placeholder="08XX XXXX XXXX" name="notelp" value="<?php echo $objAkun->notelp; ?>">
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  name="alamat" value="<?php echo $objAkun->alamat; ?>"></textarea>
+              </div>
+
+                    
+              <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
+              <a href="dashboardAdmin.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
+          </div>
+  
+
+              <style type="text/css">
+                h1{
+                  padding-top: 480px;
+
+                  font-size: 30px;
+                }
+              </style>
+    </div>
+  </form>
 </div>
+<script src="./js/foto.js"></script>

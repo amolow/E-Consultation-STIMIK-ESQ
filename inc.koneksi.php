@@ -3,7 +3,7 @@ class Connection{
 private $host = "localhost";
 private $struser = "root";
 private $strpassword = "";
-private $strdbname = "ekonsul";
+private $strdbname = "ekonsultasi";
 public $connection;
 function __construct() {
 $this->connect();

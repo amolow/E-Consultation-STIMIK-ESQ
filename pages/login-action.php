@@ -18,7 +18,7 @@ require ('../inc.koneksi.php');
 	        if (!isset($_SESSION)) {
 	        session_start();
 	        }
-	        $_SESSION["username"]= $objAkun->usename;
+	        $_SESSION["username"]= $objAkun->username;
 	        $_SESSION["password"]= $objAkun->password;
 	        $_SESSION["namadepan"]= $objAkun->namadepan;
 	        $_SESSION["namabelakang"]= $objAkun->namabelakang;
@@ -28,6 +28,7 @@ require ('../inc.koneksi.php');
 	        $_SESSION["role"]= $objAkun->role;
 	        $_SESSION["gender"]= $objAkun->gender;
 	        $_SESSION["foto"]= $objAkun->foto;
+			$_SESSION["tgllahir"] = $objAkun->tgllahir;
 
 	        echo "<script>alert('Login sukses');</script>";
 	        // echo "<script>window.location = '../index.php';</script>";
