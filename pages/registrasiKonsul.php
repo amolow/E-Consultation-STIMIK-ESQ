@@ -119,9 +119,9 @@ if (isset ($_POST['btnSubmit'])){
   <div class="media clearfix" style="height:100%; margin:30px;">
       <div class="left">
           <div class="pic" style="margin: 10px;">
-              <img class="pfp" src="Asset/blankphoto.jpg" alt="..." height="400px" width="350px">
+              <img class="pfp" src="Asset/blankphoto.jpg" alt="..." height="400px" width="350px" id="bingfoto">
           </div>
-          <input type="file" name="fupload"	>
+          <input type="file" name="fupload"	id="upfoto">
  	    </div>
 
       <div class="information" style="height: 100%; width: 100%; margin: 20px;">
@@ -184,3 +184,4 @@ if (isset ($_POST['btnSubmit'])){
             </style>
   </div>
 </div>
+<script src="./js/foto.js"></script>

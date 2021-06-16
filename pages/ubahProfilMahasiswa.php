@@ -5,12 +5,12 @@ $objMahasiswa = new Mahasiswa();
 
 
 if (isset ($_POST['btnSubmit'])){
-    $objMahasiswa->NIM= $_POST['NIM'];
-    $objMahasiswa->prodi= $_POST['prodi'];
-    $objMahasiswa->semester= $_POST['semester'];
+    $objMahasiswa->username= $_SESSION ['username'];
+    $objMahasiswa->prodi= $_SESSION ['prodi'];
+    $objMahasiswa->semester= $_SESSION ['semester'];
 
-    if(isset($_GET['NIM'])){
-        $objMahasiswa->NIM= $_GET['NIM'];
+    if(isset($_GET['username'])){
+        $objMahasiswa->username= $_GET['username'];
         $objMahasiswa->UpdateMahasiswa();
     }
     else{
@@ -22,8 +22,8 @@ if (isset ($_POST['btnSubmit'])){
     </script>';
     }
     }
-    else if(isset($_GET['NIM'])){
-    $objMahasiswa->NIM = $_GET['NIM'];
+    else if(isset($_GET['username'])){
+    $objMahasiswa->username = $_GET['username'];
     $objMahasiswa->SelectOneMahasiswa();
     }
     ?>
@@ -37,22 +37,25 @@ if (isset ($_POST['btnSubmit'])){
 </head>
 <body>
 
-        <?php
-                  $name = "Mutiara Persada Pulungan";
+              <?php
+                  $name =  $_SESSION["namadepan"] . " ". $_SESSION["namabelakang"];
                   $status = "Mahasiswa STIMIK ESQ";
-                  $nim = "1910130010";
-                  $DoB = "19 Januari 2001";
-                  $gender = "Perempuan";
-                  $email = "m.persada.p@students.esqbs.ac.id";
-                  $alamat = "Jakarta Selatan";
-                  $notelpon = "086274839578";
-        ?>
+                  $email =  $_SESSION["email"];
+                  $username = $_SESSION["username"];
+                  $tgllahir =  $_SESSION["tgllahir"];
+                  $gender =  $_SESSION["gender"];
+                  $alamat =  $_SESSION["alamat"];
+                  $notelp =  $_SESSION["notelp"];
+                  $foto =  $_SESSION["foto"];
+              ?>
+
         <div class="heading">
             <div class="media clearfix">
               <div class="left">
                 <div class="pic ">
-                    <img class="pfp" src="Asset/muti.jpg" alt="..." height="500px" width="450px">
+                    <img class="pfp" src=<?php echo $foto?> alt="..." height="500px" width="450px" id="bingfoto">
                 </div>
+                <input type="file" name="fupload" id="upfoto"	>
  				      </div>
 
                 <div class="information">
@@ -61,37 +64,43 @@ if (isset ($_POST['btnSubmit'])){
               			 <div class="mb-3 row" style="padding-top: 20px;">
       						    <label class="col-sm-2 col-form-label"><b>Nama</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px; ">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
       						    </div>
       						 </div>
       						 <div class="mb-3 row">
-      						    <label class="col-sm-2 col-form-label"><b>NIM</b></label>
+      						    <label class="col-sm-2 col-form-label"><b>Username</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="username" value="<?php echo $username; ?>">
       						    </div>
       						 </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>DoB</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="tgllahir" value="<?php echo $tgllahir; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Gender</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="gender" value="<?php echo $gender; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
-                      <label class="col-sm-2 col-form-label"><b>Handphone</b></label>
+                      <label class="col-sm-2 col-form-label"><b>Email</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="ssn" value="<?php echo $objEmployee->ssn; ?>">
+                      <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
+                      </div>
+                   </div>
+                   <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label"><b>No.Telp</b></label>
+                      <div class="col-sm-10" style="padding-left: 60px;">
+                      <input type="text" class="form-control" name="notelp" value="<?php echo $notelp; ?>">
                       </div>
                    </div>
       						 
@@ -110,5 +119,6 @@ if (isset ($_POST['btnSubmit'])){
               }
             </style>
 
+<script src="./js/foto.js"></script>
 </body>
 </html>
