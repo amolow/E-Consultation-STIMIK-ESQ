@@ -39,6 +39,8 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-white" href="dashboardAdmin.php?p=crudKonsultan">Konsultan</a>
                     <a class="dropdown-item text-white" href="dashboardAdmin.php?p=crudMahasiswa">Mahasiswa</a>
+                    <a class="dropdown-item text-white" href="dashboardAdmin.php?p=listConsultant">listconsultan</a>
+                    <a class="dropdown-item text-white" href="dashboardAdmin.php?p=home">listkategori</a>
                   </div>
               </li>
           </div>

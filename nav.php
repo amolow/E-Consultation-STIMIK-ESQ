@@ -141,7 +141,7 @@
 ?>
 
 
-
+<!-- 
     <!-- NAVBAR MAHASISWA-->
     <div class="hello solid">
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -212,4 +212,4 @@
   <!-- PENUTUP NAVBAR -->
 <?php
   }
-?>
+?> -->
