@@ -1,24 +1,11 @@
-<?php 
-	if (!isset($_SESSION)) {
-		session_start();
-	}
-	if(isset($_SESSION["role"])){		
-		if($_SESSION["role"] == 'employee')
-			echo '<script>window.location = "dashboardemployee.php";</script>';
-		else if($_SESSION["role"] == 'manager')
-			echo '<script>window.location = "dashboardmanager.php";</script>';
-		else if($_SESSION["role"] == 'admin')
-			echo '<script>window.location = "dashboardadmin.php";</script>';
-	}	
- 	require "inc.koneksi.php";		
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
 
     <!-- MY CSS -->
-    <link rel="stylesheet" href="projectStyle.css"/>
+    <link rel="stylesheet" href="loginStyle.css" />
 
     <!-- CSS BOOTSTRAP -->
     <link
@@ -46,46 +33,30 @@
     ></script>
   </head>
 
-
-  <body class="bagc">
-<?php 
-
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-
-    // $username = $_SESSION['username'];
-    // $password = $_SESSION['password'];
-    // $email = $_SESSION['email'];
-    // $role = $_SESSION['role'];
-?>
-    
-    <?php include("nav.php");?>
-
-
-
-
-
-
-
-<?php
-$pages_dir = 'pages';
-if (!empty($_GET['p'])) {
-    $pages = scandir($pages_dir, 0);
-    unset($pages[0], $pages[1]);
-
-    $p = $_GET['p'];
-
-    if (in_array($p . '.php', $pages)) {
-        include($pages_dir . '/' . $p .  '.php');
-    } else {
-        echo "Halaman Tidak Ditemukan";
-    }
-} else {
-    include "./pages/home2.php";
-}
-?>
-
-
-
+  
+  <body class="main">
+    <div class="cont">
+    <div class="tengah">
+      <div class="container">
+        <form action="pages/login-action.php" method="post" style="font-family: sans-serif;">
+          <img src="Asset/toga.png" alt="" />
+          <h1>LOGIN</h1>
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label"><b>Username</b></label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Username" name="username">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label"><b>Password</b></label>
+            <input type="password" class="form-control" id="exampleInput" placeholder="Password" name="password">
+          </div>
+          <div class="klik">
+            <input type="submit" class="btn text-white" value="Login" name="btnLogin">
+            <br />
+            <a class="link text-white" href="pages/reset.php">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
 </html>
