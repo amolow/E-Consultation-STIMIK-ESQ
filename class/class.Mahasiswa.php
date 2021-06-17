@@ -44,10 +44,17 @@ class Mahasiswa extends Connection {
 	}
 	
 	
-	public function UpdateMahasiswa(){
+	public function UpdateMahasiswaView(){
 	
-	  $sql = "UPDATE mahasiswa SET username = '$this->username', '$this->IDMahasiswa', IDprodi = '$this->IDprodi', semester = '$this->semester', tgllahir = '$this->tgllahir' WHERE username = '$this->username'";
-		
+		$sql = "UPDATE vw_mahasiswa SET username = '$this->username', 
+        namadepan = '$this->namadepan', 
+        namabelakang = '$this->namabelakang', 
+        email = '$this->email', 
+        gender = '$this->gender', 
+        notelp = '$this->notelp', 
+        alamat = '$this->alamat', 
+        tempat = '$this->tempat', 
+        username = '$this->username' WHERE username = '$this->username'";		
 		$this->hasil = mysqli_query($this->connection, $sql);
 		
 		if($this->hasil)
@@ -55,6 +62,20 @@ class Mahasiswa extends Connection {
 		else
 			$this->message ='Data gagal ditambahkan!';
 	}
+
+	public function UpdateMahasiswa(){
+	
+		$sql = "UPDATE mahasiswa SET username = '$this->username', '$this->IDMahasiswa', IDprodi = '$this->IDprodi', semester = '$this->semester', tgllahir = '$this->tgllahir' WHERE username = '$this->username'";
+		  
+		  $this->hasil = mysqli_query($this->connection, $sql);
+		  
+		  if($this->hasil)
+			  $this->message ='Data berhasil ditambahkan!';
+		  else
+			  $this->message ='Data gagal ditambahkan!';
+	  }
+
+
 	
 	
 	public function DeleteMahasiswa(){
@@ -143,5 +164,31 @@ class Mahasiswa extends Connection {
 
 		}
 		}
+
+		public function SelectOneMahasiswaView($username){
+			$sql = "SELECT * FROM vw_mahasiswa WHERE username='$this->username'";
+			$resultOne = mysqli_query($this->connection, $sql);
+		
+		
+			if(mysqli_num_rows($resultOne) == 1){
+				$this->hasil = true;
+				$data = mysqli_fetch_assoc($resultOne);
+				$objMahasiswa->username=$data['username'];
+				$objMahasiswa->namadepan=$data['namadepan'];
+				$objMahasiswa->namabelakang=$data['namabelakang'];
+				$objMahasiswa->email=$data['email'];
+				$objMahasiswa->alamat=$data['alamat'];
+				$objMahasiswa->notelp=$data['notelp'];
+				$objMahasiswa->role=$data['role'];
+				$objMahasiswa->gender=$data['gender'];
+				$objMahasiswa->foto=$data['foto'];
+				$objMahasiswa->IDMahasiswa=$data['IDMahasiswa'];
+				$objMahasiswa->IDprodi=$data['IDprodi'];
+				$objMahasiswa->semester=$data['semester'];
+				$objMahasiswa->tgllahir=$data['tgllahir'];
+				$objMahasiswa->NamaProdi=$data['NamaProdi'];
+	
+			}
+			}
 	
 	}

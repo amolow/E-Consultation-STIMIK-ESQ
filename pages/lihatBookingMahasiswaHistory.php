@@ -9,7 +9,7 @@
 <table class="table table-bordered">
 <tr>
 <th>IDBooking</th>
-<th>IDMahasiswa</th>
+<th>IDKonsultan</th>
 <th>jadwal</th>
 <th>waktu</th>
 <th>tempat</th>
@@ -23,8 +23,8 @@
     require_once('./class/class.Booking.php');
     $objBooking = new Booking();
 
-    $KonsulID = $objBooking->getIdKonsultan($_SESSION["username"]);
-    $arrayResult = $objBooking->SelectBookingByKonsultanSelesai($KonsulID[0]['IDKonsultan']);
+    $KonsulID = $objBooking->getIdMahasiswa($_SESSION["username"]);
+    $arrayResult = $objBooking->SelectBookingByMahasiswaSelesai($KonsulID[0]['IDMahasiswa']);
     
 
     if(count($arrayResult) == 0){
@@ -37,7 +37,7 @@
             
             echo '<tr>';
             echo '<td>'.$dataBooking->IDBooking.'</td>';
-            echo '<td>'.$dataBooking->IDMahasiswa.'</td>';
+            echo '<td>'.$dataBooking->IDKonsultan.'</td>';
             echo '<td>'.$dataBooking->jadwal.'</td>';
             echo '<td>'.$dataBooking->waktu.'</td>';
             echo '<td>'.$dataBooking->tempat.'</td>';

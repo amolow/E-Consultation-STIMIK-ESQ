@@ -25,7 +25,9 @@
           <div class="navbar-nav" style="margin-left: 5em">
             <a class="nav-link text-white" href="dashboardMahasiswa.php?p=home2">HOME</a>
             <a class="nav-link text-white" href="dashboardMahasiswa.php?p=aboutus">ABOUT US</a>
-            <a class="nav-link text-white" href="dashboardMahasiswa.php?p=actionPlan">ACTION PLAN</a>
+            <a class="nav-link text-white" href="dashboardMahasiswa.php?p=lihatBookingMahasiswa">JADWAL</a>
+            <a class="nav-link text-white" href="dashboardMahasiswa.php?p=lihatBookingMahasiswaHistory">CONSULTATION HISTORY</a>
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-white"

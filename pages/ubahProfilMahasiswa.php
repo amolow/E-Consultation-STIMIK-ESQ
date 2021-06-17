@@ -5,27 +5,21 @@ $objMahasiswa = new Mahasiswa();
 
 
 if (isset ($_POST['btnSubmit'])){
-    $objMahasiswa->username= $_SESSION ['username'];
-    $objMahasiswa->prodi= $_SESSION ['prodi'];
-    $objMahasiswa->semester= $_SESSION ['semester'];
+  $objMahasiswa->UpdateMahasiswaView();
+  $objMahasiswa->namadepan= $_POST['namadepan'];
+  $objMahasiswa->namabelakang= $_POST['namabelakang'];
+  $objMahasiswa->email= $_POST['email'];
+  $objMahasiswa->gender= $_POST['gender'];
+  $objMahasiswa->notelp= $_POST['notelp'];
+  $objMahasiswa->alamat= $_POST['alamat'];
 
-    if(isset($_GET['username'])){
-        $objMahasiswa->username= $_GET['username'];
-        $objMahasiswa->UpdateMahasiswa();
+  var_dump($objMahasiswa);
+
     }
-    else{
-        $objMahasiswa->AddMahasiswa();
-    }
-    echo "<script> alert('$objMahasiswa->message'); </script>";
-    if($objMahasiswa->hasil){
-    echo '<script> window.location = "index.php?p=crud";
-    </script>';
-    }
-    }
-    else if(isset($_GET['username'])){
-    $objMahasiswa->username = $_GET['username'];
-    $objMahasiswa->SelectOneMahasiswa();
-    }
+
+
+
+    
     ?>
 
 
@@ -62,39 +56,37 @@ if (isset ($_POST['btnSubmit'])){
                   <p class="name"><b style="font-size: 40px;" >Edit Profile</b></p>
                   <form action="" method="post">
               			 <div class="mb-3 row" style="padding-top: 20px;">
-      						    <label class="col-sm-2 col-form-label"><b>Nama</b></label>
+      						    <label class="col-sm-2 col-form-label"><b>Nama Depan</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px; ">
-                      <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+                      <input type="text" class="form-control" name="namadepan" value="<?php echo $_SESSION["namadepan"]; ?>">
       						    </div>
       						 </div>
       						 <div class="mb-3 row">
-      						    <label class="col-sm-2 col-form-label"><b>Username</b></label>
+      						    <label class="col-sm-2 col-form-label"><b>Nama Belakang</b></label>
       						    <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="username" value="<?php echo $username; ?>">
+                      <input type="text" class="form-control" name="namabelakang" value="<?php echo $_SESSION["namabelakang"]; ?>">
       						    </div>
       						 </div>
                    <div class="mb-3 row">
-                      <label class="col-sm-2 col-form-label"><b>DoB</b></label>
+                      <label class="col-sm-2 col-form-label"><b>Email</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="tgllahir" value="<?php echo $tgllahir; ?>">
+                      <input type="text" class="form-control" name="email" value="<?php echo $_SESSION["email"]; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Gender</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="gender" value="<?php echo $gender; ?>">
+                      <select class="form-control" name="gender" value="<?php echo $objAkun->gender;?>">
+                        <option selected>- Pilih -</option>
+                        <option value="L">Laki-Laki</option>
+                        <option value="P">Perempuan</option>
+                      </select>
                       </div>
                    </div>
                    <div class="mb-3 row">
                       <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
                       <div class="col-sm-10" style="padding-left: 60px;">
                       <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>">
-                      </div>
-                   </div>
-                   <div class="mb-3 row">
-                      <label class="col-sm-2 col-form-label"><b>Email</b></label>
-                      <div class="col-sm-10" style="padding-left: 60px;">
-                      <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
                       </div>
                    </div>
                    <div class="mb-3 row">

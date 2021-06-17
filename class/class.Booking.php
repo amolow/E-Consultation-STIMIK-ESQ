@@ -68,6 +68,20 @@ class Booking extends Connection {
         
 	}
 
+    public function getNamaKonsultan($IDKonsultan)
+    {
+        $sql = "SELECT a.namadepan
+        FROM akun a 
+        LEFT JOIN konsultan b ON b.username = a.username
+        LEFT JOIN booking c ON c.IDKonsultan = b.IDKonsultan
+        WHERE c.IDKonsultan = '".$IDKonsultan."'";     
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+        
+	}
+
 
     
     public function UpdateBooking(){
@@ -141,6 +155,90 @@ class Booking extends Connection {
     public function SelectBookingByKonsultan($IDKonsultan)
     {
         $sql = "SELECT * FROM booking WHERE IDKonsultan ='".$IDKonsultan."' AND status != 'Selesai'";
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+        $cnt=0;
+    
+        
+        if(mysqli_num_rows($result) > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                $objBooking = new Booking();
+                $objBooking->IDMahasiswa=$data['IDMahasiswa'];
+                $objBooking->IDKonsultan=$data['IDKonsultan'];
+                $objBooking->waktu=$data['waktu'];
+                $objBooking->status=$data['status'];
+                $objBooking->alasan=$data['alasan'];
+                $objBooking->jadwal=$data['jadwal' ];
+                $objBooking->IDKategori=$data['IDKategori' ];
+                $objBooking->tempat=$data['tempat' ];
+                $objBooking->IDBooking=$data['IDBooking' ];
+                $arrResult[$cnt] = $objBooking;
+                $cnt++;
+            }
+        }
+        return $arrResult;
+     
+    }
+
+    public function SelectBookingByKonsultanSelesai($IDKonsultan)
+    {
+        $sql = "SELECT * FROM booking WHERE IDKonsultan ='".$IDKonsultan."' AND status = 'Selesai'";
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+        $cnt=0;
+    
+        
+        if(mysqli_num_rows($result) > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                $objBooking = new Booking();
+                $objBooking->IDMahasiswa=$data['IDMahasiswa'];
+                $objBooking->IDKonsultan=$data['IDKonsultan'];
+                $objBooking->waktu=$data['waktu'];
+                $objBooking->status=$data['status'];
+                $objBooking->alasan=$data['alasan'];
+                $objBooking->jadwal=$data['jadwal' ];
+                $objBooking->IDKategori=$data['IDKategori' ];
+                $objBooking->tempat=$data['tempat' ];
+                $objBooking->IDBooking=$data['IDBooking' ];
+                $arrResult[$cnt] = $objBooking;
+                $cnt++;
+            }
+        }
+        return $arrResult;
+     
+    }
+
+    public function SelectBookingByMahasiswa($IDMahasiswa)
+    {
+        $sql = "SELECT * FROM booking WHERE IDMahasiswa ='".$IDMahasiswa."' AND status != 'Selesai'";
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+        $cnt=0;
+    
+        
+        if(mysqli_num_rows($result) > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                $objBooking = new Booking();
+                $objBooking->IDMahasiswa=$data['IDMahasiswa'];
+                $objBooking->IDKonsultan=$data['IDKonsultan'];
+                $objBooking->waktu=$data['waktu'];
+                $objBooking->status=$data['status'];
+                $objBooking->alasan=$data['alasan'];
+                $objBooking->jadwal=$data['jadwal' ];
+                $objBooking->IDKategori=$data['IDKategori' ];
+                $objBooking->tempat=$data['tempat' ];
+                $objBooking->IDBooking=$data['IDBooking' ];
+                $arrResult[$cnt] = $objBooking;
+                $cnt++;
+            }
+        }
+        return $arrResult;
+     
+    }
+
+    public function SelectBookingByMahasiswaSelesai($IDMahasiswa)
+    {
+        $sql = "SELECT * FROM booking WHERE IDMahasiswa ='".$IDMahasiswa."' AND status = 'Selesai'";
         $result = mysqli_query($this->connection, $sql);
         $arrResult = Array();
         $cnt=0;
