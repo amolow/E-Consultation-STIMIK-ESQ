@@ -35,7 +35,7 @@
 
   
   <body class="main">
-    <div class="cont">
+    <div class="cont" style="margin-top:70px;">
     <div class="tengah">
       <div class="container">
         <form action="pages/login-action.php" method="post" style="font-family: sans-serif;">

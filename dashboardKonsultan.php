@@ -1,4 +1,7 @@
-<?php 	
+<?php 
+    if (!isset($_SESSION)) {
+        session_start();
+    }	
  	require "inc.koneksi.php";		
 ?>
 <!DOCTYPE html>

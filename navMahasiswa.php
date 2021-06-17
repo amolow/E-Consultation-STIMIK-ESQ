@@ -1,6 +1,6 @@
     <!-- NAVBAR MAHASISWA-->
     <div class="hello solid">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; width:100%;">
       <div class="container-fluid">
         <img src="Asset/esq.png" alt="" />
         <div class="logo" style="margin-left: 2em">

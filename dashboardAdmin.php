@@ -1,14 +1,6 @@
 <?php 
 	if (!isset($_SESSION)) {
 		session_start();
-	}
-	if(isset($_SESSION["role"])){		
-		if($_SESSION["role"] == 'employee')
-			echo '<script>window.location = "dashboardemployee.php";</script>';
-		else if($_SESSION["role"] == 'manager')
-			echo '<script>window.location = "dashboardmanager.php";</script>';
-		else if($_SESSION["role"] == 'admin')
-			echo '<script>window.location = "dashboardadmin.php";</script>';
 	}	
  	require "inc.koneksi.php";		
 ?>
@@ -47,10 +39,12 @@
   </head>
 
 
-  <body class="bagc">
+  <body>
     
-    <?php include("navAdmin.php");?>
+<?php include("navAdmin.php");?>
 
+<div style="margin-top:70px;">
+</div>
 
 <?php
 $pages_dir = 'pages';
@@ -69,7 +63,5 @@ if (!empty($_GET['p'])) {
     include "./pages/home2.php";
 }
 ?>
-
-
 
 </html>

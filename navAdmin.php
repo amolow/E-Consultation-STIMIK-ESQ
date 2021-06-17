@@ -1,5 +1,5 @@
 <div class="hello solid">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; width:100%;">
       <div class="container-fluid">
         <img src="Asset/esq.png" alt="" />
         <div class="logo" style="margin-left: 2em">
@@ -76,7 +76,7 @@
         <a href="dashboardAdmin.php?p=profile">
           <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" />
         </a>
-        <a href="pages/login.php">
+        <a href="index.php">
           <img src="Asset/logout.png" alt="" id="logout" />
       </a>
       </div>
