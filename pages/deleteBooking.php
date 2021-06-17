@@ -1,12 +1,12 @@
 <?php
 require_once('./class/class.Booking.php');
 if(isset($_GET['IDBooking'])){
-$objAkun = new Akun();
-$objAkun->username = $_GET['IDBooking'];
-$objAkun->DeleteAkun();
-echo "<script> alert('$objAkun->message'); </script>";
-echo "<script>window.location = 'index.php?p=crudbooking'</scri
-pt>";
+$objBooking = new Booking();
+$objBooking->IDBooking = $_GET['IDBooking'];
+$objBooking->DeleteBooking($_GET['IDBooking']);
+echo "<script> alert('$objBooking->message'); </script>";
+echo "<script>window.location.href = 'dashboardAdmin.php?p=crudbooking'</script>";
+
 }
 else{
 echo '<script>window.history.back()</script>';

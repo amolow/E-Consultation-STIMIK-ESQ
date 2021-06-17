@@ -35,17 +35,26 @@
     if (isset ($_POST['btnSubmit'])){
         $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
         // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
+        echo "<script>window.location.href = 'dashboardAdmin.php?p=lihatBookingConsultant'</script>";
 
     }
 
     if (isset ($_POST['btnDecline'])){
         $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
         // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
+        echo "<script>window.location.href = 'dashboardAdmin.php?p=lihatBookingConsultant'</script>";
+
+    }
+
+    if (isset ($_POST['btnDone'])){
+        $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
+        // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
+        echo "<script>window.location.href = 'dashboardAdmin.php?p=lihatBookingConsultant'</script>";
+
     }
 
 
     if(count($arrayResult) == 0){
-        echo '<tr><td colspan="5">Tidak ada data!</td></tr>';
     }
 
     else
@@ -74,6 +83,7 @@
             
             <input type="submit" class="btn btn-primary" value="Terima" name="btnSubmit">
             </form>
+            
 
         
             
@@ -83,6 +93,14 @@
             <td>
             
             <input type="submit" class="btn btn-primary" value="Ditolak" name="btnDecline">
+            </form>
+
+            <form action="" method="post">
+            <input type="text" class="form-control" name="status" hidden value="Selesai">  
+            <input type="text" class="form-control" name="IDBooking" hidden value="<?php echo $dataBooking->IDBooking; ?>">  
+            <td>
+            
+            <input type="submit" class="btn btn-primary" value="Selesai" name="btnDone">
             </form>
              </td>
              <?php

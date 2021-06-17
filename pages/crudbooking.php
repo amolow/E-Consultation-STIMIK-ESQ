@@ -9,9 +9,7 @@
 <a class="btn btn-primary" href="index.php?p=addBooking">Add</a>
 <table class="table table-bordered">
 <tr>
-<th>No.</th>
 <th>IDBooking</th>
-<th>NIM</th>
 <th>IDKonsultan</th>
 <th>jadwal</th>
 <th>waktu</th>
@@ -19,8 +17,6 @@
 <th>kategori</th>
 <th>status</th>
 <th>alasan</th>
-<th>Judul</th>
-<th>Isi</th>
  
 </tr>
 
@@ -39,7 +35,6 @@
     $no = 1;
         foreach ($arrayResult as $dataBooking) {
             echo '<tr>';
-            echo '<td>'.$no.'</td>';
             echo '<td>'.$dataBooking->IDBooking.'</td>';
             echo '<td>'.$dataBooking->NIM.'</td>';
             echo '<td>'.$dataBooking->IDKonsultan.'</td>';
@@ -49,16 +44,14 @@
             echo '<td>'.$dataBooking->kategori.'</td>';
             echo '<td>'.$dataBooking->status.'</td>';
             echo '<td>'.$dataBooking->alasan.'</td>';
-            echo '<td>'.$dataBooking->judul.'</td>';
-            echo '<td>'.$dataBooking->isi.'</td>';
 
 
             echo '<td>
-            <a class="btn btn-primary" href="index.php?p=addBooking&IDBooking='.$dataBooking->IDBooking.'"> 
+            <a class="btn btn-primary" href="dashboardAdmin.php?p=editbooking&IDBooking='.$dataBooking->IDBooking.'"> 
             Edit 
             </a> | 
             
-            <a class="btn btn-primary" href="index.php?p=deleteBooking&IDBooking='.$dataBooking->IDBooking.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-primary" href="dashboardAdmin.php?p=deleteBooking&IDBooking='.$dataBooking->IDBooking.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';
