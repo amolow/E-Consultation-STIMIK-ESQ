@@ -1,12 +1,8 @@
 <?php 
 	if (!isset($_SESSION)) {
 		session_start();
-<<<<<<< Updated upstream
-	}	
-=======
 	}
 
->>>>>>> Stashed changes
  	require "inc.koneksi.php";		
 ?>
 <!DOCTYPE html>

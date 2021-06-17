@@ -12,23 +12,17 @@ class Akun extends Connection
     private $notelp= "";
     private $role= "";
     private $hasil = false;
-<<<<<<< Updated upstream
-    private $tgllahir="";
-    private $foto="";
-
-    public function __get($atribute) 
-=======
   
   public function __get($atribute) 
   {
 		if (property_exists($this, $atribute)) 
->>>>>>> Stashed changes
     {
 		if (property_exists($this, $atribute)) 
         {
 			return $this->$atribute;
 		}
     }
+}
 
 	public function __set($atribut, $value)
     {
@@ -38,17 +32,10 @@ class Akun extends Connection
 		}
 	}
 
-<<<<<<< Updated upstream
-    public function AddAkun(){
-        $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role,foto, tgllahir)
-        VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role', '$this->foto', '$this->tgllahir')";
-            $this->hasil = mysqli_query($this->connection, $sql);
-=======
 public function AddAkun(){
     $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
     VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
     $this->hasil = mysqli_query($this->connection, $sql);
->>>>>>> Stashed changes
     
     
             if($this->hasil)
@@ -192,8 +179,5 @@ public function resetPass(){
         }
 }
 }
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
