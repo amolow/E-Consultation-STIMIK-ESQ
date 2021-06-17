@@ -43,9 +43,6 @@
     
 <?php include("navAdmin.php");?>
 
-<div style="margin-top:70px;">
-</div>
-
 <?php
 $pages_dir = 'pages';
 if (!empty($_GET['p'])) {

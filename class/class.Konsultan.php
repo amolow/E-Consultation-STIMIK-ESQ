@@ -95,12 +95,19 @@ class Konsultan extends Connection{
 		if(mysqli_num_rows($result) > 0) {
 			while ($data = mysqli_fetch_array($result)) {
 				$objKonsultan = new Konsultan();
+
+				$objKonsultan->username=$data['username'];
 				$objKonsultan->namadepan=$data['namadepan'];
 				$objKonsultan->namabelakang=$data['namabelakang'];
-				$objKonsultan->Namakategori=$data['Namakategori'];
-				$objKonsultan->IDDepartment=$data['IDDepartment'];
+				$objKonsultan->email=$data['email'];
+				$objKonsultan->alamat=$data['alamat'];
+				$objKonsultan->notelp=$data['notelp'];
+				$objKonsultan->role=$data['role'];
+				$objKonsultan->gender=$data['gender'];
+				$objKonsultan->foto=$data['foto'];
 				$objKonsultan->IDKonsultan=$data['IDKonsultan'];
-				$objKonsultan->username=$data['username'];
+				$objKonsultan->IDDepartment=$data['IDDepartment'];
+				$objKonsultan->Namakategori=$data['Namakategori'];
 				$arrResult[$cnt] = $objKonsultan;
 				$cnt++;
 			}

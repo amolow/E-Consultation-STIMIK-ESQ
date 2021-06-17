@@ -41,13 +41,7 @@
 
   <body class="bagc">
     
-    <?php include("navMahasiswa.php");?>
-
-
-
-
-
-
+<?php include("navMahasiswa.php");?>
 
 <?php
 $pages_dir = 'pages';
