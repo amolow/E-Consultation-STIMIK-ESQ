@@ -23,6 +23,8 @@
 
 <?php
     require_once('./class/class.Booking.php');
+    require_once('authorizationAdmin.php');
+
     $objBooking = new Booking();
     $arrayResult = $objBooking->SelectAllBooking();
     

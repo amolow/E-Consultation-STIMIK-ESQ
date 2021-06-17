@@ -131,6 +131,7 @@ class Konsultan extends Connection{
 				$objKonsultan->IDDepartment=$data['IDDepartment'];
 				$objKonsultan->IDKonsultan=$data['IDKonsultan'];
 				$objKonsultan->username=$data['username'];
+				$objKonsultan->foto=$data['foto'];
 				$arrResult[$cnt] = $objKonsultan;
 				$cnt++;
 			}

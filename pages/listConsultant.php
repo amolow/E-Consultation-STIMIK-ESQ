@@ -1,6 +1,5 @@
 
 
-
   <h4 class="title"><span class="text"><strong>Konsultan  List</strong></span></h4>  
   <div class="cont">
 <?php
@@ -9,20 +8,19 @@ require_once('./class/class.Konsultan.php');
 	$objKonsultan = new Konsultan();
 	$arrayResult = $objKonsultan->SelectAllKonsultanViewByKategori($IDKategori);
 		if(count($arrayResult) == 0){
+			
 			echo '<tr><td colspan="5">Tidak ada data!</td></tr>';			
 		}else{	
 			$no = 1;	
 			foreach ($arrayResult as $dataKonsultan) {							
-				if($dataKonsultan->photo != null)
-					echo '<li><img class="images img-rounded" src="upload/'.$dataKonsultan->photo.'" width="180" height="180">';
-				else
-				$IDKategori= $_GET['IDKategori'];	
+				$IDKategori= $_GET['IDKategori'];
+				
 				echo '
 				<div class="card-container vira" >
 				<div class="upper-container">
 				   <div class="image-container">
 					<a href="dashboardMahasiswa.php?p=addBooking&IDKonsultan='.$dataKonsultan->IDKonsultan.'&IDKategori='.$IDKategori.'">
-					  <img src="../Asset/pfp.jpg" />
+					  <img src="'.$dataKonsultan->foto.'" />
 				   </div>
 				</div>
 				<div class="lower-container">
@@ -31,6 +29,7 @@ require_once('./class/class.Konsultan.php');
 					  <h3>'.$dataKonsultan->namadepan.' '.$dataKonsultan->namabelakang.'</h3>
 					</a>    
 					  <h4>'.$dataKonsultan->Namakategori.'</h4>
+					  <div>'.$dataKonsultan->namadepan.'</div>
 				   </div>
 
 				</div>
@@ -49,3 +48,4 @@ require_once('./class/class.Konsultan.php');
 
 ?>
 </div>
+<script src="./js/foto.js"></script>
