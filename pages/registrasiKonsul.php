@@ -12,6 +12,8 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->alamat= $_POST['alamat'];
     $objAkun->gender= $_POST['gender'];
     $objAkun->notelp= $_POST['notelp'];
+    $objAkun->foto= $_POST['foto'];
+
     $objAkun->role='Konsultan';
 
     // Upload File Registrasi//
@@ -116,6 +118,7 @@ if (isset ($_POST['btnSubmit'])){
 
 <div class="heading" style="width:100%; height:100%; text-align: center;">
   <p><b style="font-size:40px;">Register</b></p>
+  <form action="" method="post" enctype="multipart/form-data"> 
   <div class="media clearfix" style="height:100%; margin:30px;">
       <div class="left">
           <div class="pic" style="margin: 10px;">
@@ -125,7 +128,8 @@ if (isset ($_POST['btnSubmit'])){
  	    </div>
 
       <div class="information" style="height: 100%; width: 100%; margin: 20px;">
-        <form action="" method="post">  
+         
+        
             <div class="input-group mb-3">
               <label class="col-sm-2 col-form-label"><b>Username (NIDN)</b></label>
               <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $objAkun->username;?>" value="<?php echo $objKonsultan->username;?>">
@@ -171,7 +175,7 @@ if (isset ($_POST['btnSubmit'])){
               		
             <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
             <a href="dashboardAdmin.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
-        </form>
+        
         </div>
  
 
@@ -183,5 +187,6 @@ if (isset ($_POST['btnSubmit'])){
               }
             </style>
   </div>
+  </form>
 </div>
 <script src="./js/foto.js"></script>

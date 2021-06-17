@@ -12,6 +12,7 @@ class Akun extends Connection
     private $notelp= "";
     private $role= "";
     private $hasil = false;
+    private $foto;
   
   public function __get($atribute) 
   {
@@ -22,7 +23,7 @@ class Akun extends Connection
 			return $this->$atribute;
 		}
     }
-}
+    }
 
 	public function __set($atribut, $value)
     {
@@ -33,8 +34,8 @@ class Akun extends Connection
 	}
 
 public function AddAkun(){
-    $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role)
-    VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role')";
+    $sql = "INSERT INTO akun (username, password, namadepan, namabelakang, email, alamat, gender, notelp, role, foto)
+    VALUES ('$this->username', '$this->password', '$this->namadepan', '$this->namabelakang', '$this->email', '$this->alamat', '$this->gender', '$this->notelp', '$this->role', '$this->foto')";
     $this->hasil = mysqli_query($this->connection, $sql);
     
     
