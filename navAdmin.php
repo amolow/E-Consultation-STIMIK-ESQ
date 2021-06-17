@@ -44,8 +44,7 @@
               </li>
           </div>
         </div>
-        
-        <a class="nav-link text-white" href="dashboardAdmin.php?p=listTables">Admin Hub</a>
+
         <a type="button" data-toggle="modal" class="nav-link text-white" data-target="#exampleModal">Registration</a>
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Registrasi

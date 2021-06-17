@@ -6,6 +6,7 @@
 
     <!-- MY CSS -->
     <link rel="stylesheet" href="loginStyle.css" />
+    <link rel="shortcut icon" href="Asset/LogoEBS.png">
 
     <!-- CSS BOOTSTRAP -->
     <link

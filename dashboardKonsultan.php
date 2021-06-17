@@ -11,6 +11,7 @@
 
     <!-- MY CSS -->
     <link rel="stylesheet" href="projectStyle.css"/>
+    <link rel="shortcut icon" href="Asset/LogoEBS.png">
 
     <!-- CSS BOOTSTRAP -->
     <link

@@ -45,13 +45,13 @@ require ('../inc.koneksi.php');
       	}
 		else{
         echo "<script>alert('Password Salah');</script>";
-        echo "<script>window.location = 'index.php';</script>";
+        echo "<script>window.location = '../index.php';</script>";
       	}
 
     }
     else{
     	echo "<script>alert('Username tidak terdaftar');</script>";
-    	echo "<script>window.location = 'index.php';</script>";
+    	echo "<script>window.location = '../index.php';</script>";
     }
   }
 ?>

@@ -4,6 +4,7 @@
                   $email =  $_SESSION["email"];
                   $username = $_SESSION["username"];
                   $tgllahir =  $_SESSION["tgllahir"];
+                  $role =  $_SESSION["role"];
                   $gender =  $_SESSION["gender"];
                   if ($gender == "P"){
                     $jKelamin = "Perempuan";
@@ -29,8 +30,25 @@
             </div>
 
               <div class="information">
+                <?php
+                   if($role == "Admin"){
+                ?>
+                    <p style="font-size:40px;"><b>Admin E-Consultation STIMIK ESQ</b></p>
+                <?php   
+                   }
+                   elseif ($role == "Konsultan") {
+                ?>
+                     <p style="font-size:40px;"><b>Konsultan STIMIK ESQ</b></p>
+                <?php
+                   }
+                   elseif ($role == "Mahasiswa"){
+                ?>
+                    <p style="font-size:40px;"><b>Mahasiswa STIMIK ESQ</b></p>
+                <?php   
+                   }
+                ?>
 
-                <p style="font-size:40px;"><b>Mahasiswa STIMIK ESQ</b></p>
+                
 
                 <div class="info">
                   <p>
@@ -42,11 +60,7 @@
                       echo "E-mail : $email<br>";
                       echo "Alamat : $alamat<br>";
                       echo "No Handphone : $notelp<br>";
-                      
-
-                      
-                      
-                        
+                               
                     ?>
                   </p>
                 </div>
