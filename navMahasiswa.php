@@ -39,18 +39,10 @@
               COUNSELLING
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <div class="btn-group dropright">
-                  <button type="button" class="btn dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dosen
-                  </button>
-                  <div class="dropdown-menu" >
-                    <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=listConsultant">Dosen Pembimbing</a>
-                    <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=home2">Dosen Kaprodi</a>
-                  </div>
-                </div>
-                <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=crudbooking ">Keuangan</a>
-                <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Kemahasiswaan</a>
-                <a class="dropdown-item text-white" href="../ListKonsultan/KonsultanListTest.html">Coaching</a>
+                <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=listConsultant&IDKategori=3 ">Dosen</a>
+                <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=listConsultant&IDKategori=4 ">Keuangan</a>
+                <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=listConsultant&IDKategori=2">Kemahasiswaan</a>
+                <a class="dropdown-item text-white" href="dashboardMahasiswa.php?p=listConsultant&IDKategori=1">Coaching</a>
                </div>
             </li>
           </div>
