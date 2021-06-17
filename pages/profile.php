@@ -1,4 +1,3 @@
-
         <?php
                   $name =  $_SESSION["namadepan"] . " ". $_SESSION["namabelakang"];
                   $status = "Mahasiswa STIMIK ESQ";
@@ -6,6 +5,15 @@
                   $username = $_SESSION["username"];
                   $tgllahir =  $_SESSION["tgllahir"];
                   $gender =  $_SESSION["gender"];
+                  if ($gender == "P"){
+                    $jKelamin = "Perempuan";
+                  }
+                  else if ($gender == "L"){
+                    $jKelamin = "Laki-Laki";
+                  }
+                  else {
+                    $jKelamin = "-";
+                  }
                   $alamat =  $_SESSION["alamat"];
                   $notelp =  $_SESSION["notelp"];
                   $foto =  $_SESSION["foto"];
@@ -23,18 +31,23 @@
 
               <div class="information">
 
-                <p class="name"><b style="font-size: 40px;"><?php echo "$name";?></b></p>
-                <p class="desc" style="padding-top: 10px;">Mahasiswa STIMIK ESQ </p>
+                <p style="font-size:40px;"><b>Mahasiswa STIMIK ESQ</b></p>
 
                 <div class="info">
                   <p>
                     <?php
-                      echo "Username : $username<br>";
-                      echo "DOB : $tgllahir<br>";
-                      echo "Gender : $gender<br>";
+                      
+                      echo "Nama Lengkap : $name<br>";
+                      echo "NIM/Username : $username<br>";
+                      echo "Jenis Kelamin : $jKelamin<br>";
                       echo "E-mail : $email<br>";
                       echo "Alamat : $alamat<br>";
-                      echo "No Telpon : $notelp<br>";  
+                      echo "No Handphone : $notelp<br>";
+                      
+
+                      
+                      
+                        
                     ?>
                   </p>
                 </div>
