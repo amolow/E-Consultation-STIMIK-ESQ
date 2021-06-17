@@ -12,6 +12,8 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->alamat= $_POST['alamat'];
     $objAkun->gender= $_POST['gender'];
     $objAkun->notelp= $_POST['notelp'];
+    $objAkun->foto= $_POST['foto'];
+
     $objAkun->role='Mahasiswa';
     // Upload File Registrasi//
     $ukuran_maks_file = 2000000;
@@ -72,6 +74,7 @@ if (isset ($_POST['btnSubmit'])){
     $objMahasiswa->username= $_POST['username'];
     $objMahasiswa->IDprodi= $_POST['IDprodi'];
     $objMahasiswa->semester= $_POST['semester'];
+    $objMahasiswa->tgllahir= $_POST['tgllahir'];
 
     if(isset($_GET['username'])){
         $objMahasiswa->username = $_GET['username'];
@@ -145,7 +148,7 @@ if (isset ($_POST['btnSubmit'])){
                 <label class="col-sm-2 col-form-label"><b>Email</b></label>
                 <input type="text" class="form-control" placeholder="Email" name="email" value="<?php echo $objAkun->email;?>">
                 <label class="col-sm-3 col-form-label"><b>Tanggal Lahir</b></label>
-                <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgllahir"  value="">
+                <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgllahir"  value="<?php echo $objMahasiswa->tgllahir;?>">
               </div>
 
               <div class="input-group mb-3">

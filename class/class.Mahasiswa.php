@@ -3,10 +3,19 @@
 class Mahasiswa extends Connection {
 
 	private $IDMahasiswa;
-	private $IDProdi;
+	private $IDprodi;
     private $semester;
     private $tgllahir;
     private $username;
+    private $namadepan;
+	private $namabelakang;
+	private $email;
+	private $alamat;
+	private $notelp;
+	private $role;
+	private $gender;
+	private $foto;
+	private $NamaProdi;
   
   public function __get($atribute) 
   {
@@ -82,7 +91,40 @@ class Mahasiswa extends Connection {
 		}
 		return $arrResult;
 	}
+
+
+	public function SelectAllMahasiswaView(){
 	
+		$sql = "SELECT * FROM vw_mahasiswa";
+		$result = mysqli_query($this->connection, $sql);
+		$arrResult = Array();
+		$cnt=0;
+	
+		
+		if(mysqli_num_rows($result) > 0) {
+			while ($data = mysqli_fetch_array($result)) {
+				$objMahasiswa = new Mahasiswa();
+
+				$objMahasiswa->username=$data['username'];
+				$objMahasiswa->namadepan=$data['namadepan'];
+				$objMahasiswa->namabelakang=$data['namabelakang'];
+				$objMahasiswa->email=$data['email'];
+				$objMahasiswa->alamat=$data['alamat'];
+				$objMahasiswa->notelp=$data['notelp'];
+				$objMahasiswa->role=$data['role'];
+				$objMahasiswa->gender=$data['gender'];
+				$objMahasiswa->foto=$data['foto'];
+				$objMahasiswa->IDMahasiswa=$data['IDMahasiswa'];
+				$objMahasiswa->IDprodi=$data['IDprodi'];
+				$objMahasiswa->semester=$data['semester'];
+				$objMahasiswa->tgllahir=$data['tgllahir'];
+				$objMahasiswa->NamaProdi=$data['NamaProdi'];
+				$arrResult[$cnt] = $objMahasiswa;
+				$cnt++;
+			}
+		}
+		return $arrResult;
+	}
 	
 	
 	public function SelectOneMahasiswa(){

@@ -15,7 +15,6 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->foto= $_POST['foto'];
 
     $objAkun->role='Konsultan';
-
     // Upload File Registrasi//
     $ukuran_maks_file = 2000000;
     $tipe_file = @$_FILES['fupload']['type'];

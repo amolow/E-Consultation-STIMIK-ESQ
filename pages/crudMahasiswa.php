@@ -9,12 +9,14 @@
 <a class="btn btn-primary" href="index.php?p=addMahasiswa">Add</a>
 <table class="table table-bordered">
 <tr>
-<th>ID Mahasiswa</th>
-<th>IDProdi</th>
-<th>Prodi</th>
-<th>Semester</th>
-<th>tgl Lahir</th>
-<th>username</th>
+<th>No</th>
+<th>Nama Lengkap</th>
+<th>Tanggal Lahir</th>
+<th>E-Mail</th>
+<th>Alamat</th>
+<th>No Handphone</th>
+<th>Jenis Kelamin</th>
+<th>Nama Prodi</th>
 <th></th>
 
 
@@ -25,7 +27,7 @@
 <?php
     require_once('./class/class.Mahasiswa.php');
     $objMahasiswa = new Mahasiswa();
-    $arrayResult = $objMahasiswa->SelectAllMahasiswa();
+    $arrayResult = $objMahasiswa->SelectAllMahasiswaView();
 
     
     if(count($arrayResult) == 0){
@@ -38,11 +40,13 @@
         foreach ($arrayResult as $dataMahasiswa) {
             echo '<tr>';
             echo '<td>'.$no.'</td>';
-            echo '<td>'.$dataMahasiswa->NIM.'</td>';
-            echo '<td>'.$dataMahasiswa->prodi.'</td>';
-            echo '<td>'.$dataMahasiswa->semester.'</td>';
+            echo '<td>'.$dataMahasiswa->namadepan." ".$dataMahasiswa->namabelakang.'</td>';
             echo '<td>'.$dataMahasiswa->tgllahir.'</td>';
-            echo '<td>'.$dataMahasiswa->username.'</td>';
+            echo '<td>'.$dataMahasiswa->email.'</td>';
+            echo '<td>'.$dataMahasiswa->alamat.'</td>';
+            echo '<td>'.$dataMahasiswa->notelp.'</td>';
+            echo '<td>'.$dataMahasiswa->gender.'</td>';
+            echo '<td>'.$dataMahasiswa->NamaProdi.'</td>';
             echo '<td>
             <a class="btn btn-primary" href="index.php?p=addMahasiswa&NIM='.$dataMahasiswa->NIM.'"> 
             Edit 
@@ -52,6 +56,7 @@
              Delete 
              </a> 
              </td>';
+             $no++;
         }
         
     }

@@ -85,7 +85,6 @@ class Konsultan extends Connection{
 
 	public function SelectAllKonsultanView(){
 	
-	
 		$sql = "SELECT * FROM vw_consultant";
 		$result = mysqli_query($this->connection, $sql);
 		$arrResult = Array();
