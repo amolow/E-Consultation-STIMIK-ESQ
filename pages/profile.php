@@ -28,7 +28,6 @@
 
             </div>
 
-
               <div class="information">
 
                 <p style="font-size:40px;"><b>Mahasiswa STIMIK ESQ</b></p>
