@@ -41,7 +41,9 @@
 
   <body>
     
-<?php include("navAdmin.php");?>
+<?php
+
+include("navAdmin.php");?>
 
 <?php
 $pages_dir = 'pages';

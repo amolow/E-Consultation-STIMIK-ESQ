@@ -10,7 +10,7 @@ if(!isset($_SESSION["role"])){
 else
 {
 	if($_SESSION["role"]!='Admin'){
-		echo "<script> alert('Hanya admin yang dapat mengakses halaman ini'); </script>";
+		echo "<script> alert('Login Sebagai Admin'); </script>";
 		echo '<script> window.location="index.php"; </script>';
 	}
 }

@@ -20,6 +20,8 @@
 
 <?php
     require_once('./class/class.Konsultan.php');
+    require_once('authorizationAdmin.php');
+
     $objKonsultan = new Konsultan();
     $arrayResult = $objKonsultan->SelectAllKonsultanView();
     

@@ -29,29 +29,8 @@
     $objBooking = new Booking();
 
     $KonsulID = $objBooking->getIdKonsultan($_SESSION["username"]);
-    $arrayResult = $objBooking->SelectBookingByKonsultan($KonsulID[0]['IDKonsultan']);
+    $arrayResult = $objBooking->SelectBookingByKonsultanSelesai($KonsulID[0]['IDKonsultan']);
     
-
-    if (isset ($_POST['btnSubmit'])){
-        $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        echo "<script>window.location.href = 'dashboardKonsultan.php?p=lihatBookingConsultant'</script>";
-
-    }
-
-    if (isset ($_POST['btnDecline'])){
-        $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        echo "<script>window.location.href = 'dashboardKonsultan.php?p=lihatBookingConsultant'</script>";
-
-    }
-
-    if (isset ($_POST['btnDone'])){
-        $updateStat = $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        // $objBooking->UpdateStatusBooking($_POST['status'], $_POST['IDBooking']);
-        echo "<script>window.location.href = 'dashboardKonsultan.php?p=lihatBookingConsultant'</script>";
-
-    }
 
 
     if(count($arrayResult) == 0){

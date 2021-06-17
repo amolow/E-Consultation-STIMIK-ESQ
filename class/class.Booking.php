@@ -140,7 +140,7 @@ class Booking extends Connection {
     
     public function SelectBookingByKonsultan($IDKonsultan)
     {
-        $sql = "SELECT * FROM booking WHERE IDKonsultan ='".$IDKonsultan."'";
+        $sql = "SELECT * FROM booking WHERE IDKonsultan ='".$IDKonsultan."' AND status != 'Selesai'";
         $result = mysqli_query($this->connection, $sql);
         $arrResult = Array();
         $cnt=0;

@@ -26,6 +26,8 @@
 
 <?php
     require_once('./class/class.Mahasiswa.php');
+    require_once('authorizationAdmin.php');
+
     $objMahasiswa = new Mahasiswa();
     $arrayResult = $objMahasiswa->SelectAllMahasiswaView();
 
