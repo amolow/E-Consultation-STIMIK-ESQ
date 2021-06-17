@@ -67,18 +67,28 @@ class Booking extends Connection {
         return $result->fetch_all(MYSQLI_ASSOC);
         
 	}
+
+
     
     public function UpdateBooking(){
     
-      $sql = "INSERT INTO booking (IDMahasiswa, IDKonsultan, waktu, status, alasan, jadwal, IDKategori, tempat, IDBooking)
-      VALUES ('$this->IDMahasiswa', '$this->IDKonsultan', '$this->waktu', '$this->status', '$this->alasan', '$this->jadwal', '$this->IDKategori', '$this->tempat', '$this->IDBooking')";
+        $sql = "UPDATE booking SET IDBooking = '$this->IDBooking', 
+        IDKonsultan = '$this->IDKonsultan', 
+        waktu = '$this->waktu', 
+        status = '$this->status', 
+        alasan = '$this->alasan', 
+        jadwal = '$this->jadwal', 
+        IDKategori = '$this->IDKategori', 
+        tempat = '$this->tempat', 
+        IDBooking = '$this->IDBooking' WHERE IDBooking = '$this->IDBooking'";
+    
         $this->hasil = mysqli_query($this->connection, $sql);
         
-        if($this->hasil)
+            if($this->hasil)
             $this->message ='Data berhasil ditambahkan!';
         else
             $this->message ='Data gagal ditambahkan!';
-    }
+        }
 
     public function UpdateStatusBooking($status, $IDBooking)
     {
@@ -90,15 +100,15 @@ class Booking extends Connection {
     
 
     
-    public function DeleteBooking(){
-      $sql = "INSERT INTO booking (IDMahasiswa, IDKonsultan, waktu, status, alasan, jadwal, IDKategori, tempat, IDBooking)
-      VALUES ('$this->IDMahasiswa', '$this->IDKonsultan', '$this->waktu', '$this->status', '$this->alasan', '$this->jadwal', '$this->IDKategori', '$this->tempat', '$this->IDBooking')";
-        
-        if($this->hasil)
-            $this->message ='Data berhasil dihapus!';
-        else
-            $this->message ='Data gagal dihapus!';
-    }
+    public function DeleteBooking($IDBooking){
+            $sql = "DELETE FROM booking WHERE IDBooking='$this->IDBooking'";
+            $this->hasil = mysqli_query($this->connection, $sql);
+      
+            if($this->hasil)
+                $this->message ='Data berhasil dihapus!';
+            else
+                $this->message ='Data gagal dihapus!';
+        }
     
     public function SelectAllBooking(){
     
@@ -156,8 +166,8 @@ class Booking extends Connection {
      
     }
     
-    public function SelectOneBooking(){
-        $sql = "SELECT * FROM booking WHERE IDMahasiswa='$this->IDMahasiswa'";
+    public function SelectOneBooking($IDBooking){
+        $sql = "SELECT * FROM booking WHERE IDBooking='$this->IDBooking'";
         $resultOne = mysqli_query($this->connection, $sql);
     
     
