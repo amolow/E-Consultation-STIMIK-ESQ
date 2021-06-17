@@ -1,34 +1,33 @@
 <div class="container">  
-  <h4 class="title"><span class="text"><strong>Kategori  List</strong></span></h4>  
+<h4 class="title"><span class="text"><strong>Pilih Kategori Konsulmu</strong></span></h4>  
 <div class="row">
 <div class="navbar-collapse gallery">
-<ul>
+
 <?php
-	require_once('./class/class.Konsultan.php'); 	
+	require_once('./class/class.Kategori.php'); 	
 		$superssn = $_SESSION['role'];		
-		$objKonsultan = new Konsultan(); 
-		$arrayResult = $objKonsultan->SelectAllKategori();
+		$objKategori = new Kategori(); 
+		$arrayResult = $objKategori->SelectAllKategori();
 		if(count($arrayResult) == 0){
 			echo '<tr><td colspan="5">Tidak ada data!</td></tr>';			
 		}else{	
 			$no = 1;	
-			foreach ($arrayResult as $dataKonsultan) {							
-				if($dataKonsultan->photo != null)
-					echo '<li><img class="images img-rounded" src="upload/'.$dataKonsultan->photo.'" width="180" height="180">';
-				else
-					echo '<li><img class="images img-rounded" src="../Asset/def.png" width="180" height="180">';				
-				
-				echo $dataKonsultan->Namakategori;
-				echo $dataKonsultan->namabelakang;
-				echo'<center><a class="btn btn-info btn-sm" href="dashboardMahasiswa.php?p=bookingScreen&IDKonsultan='.$dataKonsultan->IDKonsultan.'">
-				<span">'.$dataKonsultan->username.' '.$dataKonsultan->IDDepartment.' '.$dataKonsultan->username.'</span></a></center>';
-				echo '</li>';	
-				
+			foreach ($arrayResult as $dataKategori) {							
+				echo '
+				  <div class="card-body">
+				  <a href="dashboardMahasiswa.php?p=listConsultant&IDKategori='.$dataKategori->IDKategori.'" type="button" class="btn ">
+					<h1 class="card-title">'.$dataKategori->Namakategori.'</h1>
+					</a>
+				  </div>
+
+
+			  ';			
+
     		}
 		}
 
 ?>
-</ul>
+
 </div>
 </div>
 </div>

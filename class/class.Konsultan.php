@@ -115,10 +115,9 @@ class Konsultan extends Connection{
 		return $arrResult;
 	}
 	
-	public function SelectAllKonsultanViewByKategori($IDDepartment){
-	
-	
-		$sql = "SELECT * FROM vw_consultant WHERE IDDepartment = 'this->$IDDepartment'";
+	public function SelectAllKonsultanViewByKategori($IDKategori){
+
+		$sql = "SELECT * FROM vw_consultant WHERE IDDepartment = $IDKategori";
 		$result = mysqli_query($this->connection, $sql);
 		$arrResult = Array();
 		$cnt=0;
@@ -153,6 +152,7 @@ class Konsultan extends Connection{
 			while ($data = mysqli_fetch_array($result)) {
 				$objKonsultan = new Konsultan();
 				$objKonsultan->Namakategori=$data['Namakategori'];
+				$objKonsultan->IDDepartment=$data['IDDepartment'];
 
 				$arrResult[$cnt] = $objKonsultan;
 				$cnt++;

@@ -22,10 +22,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-family:Roboto;">
           <div class="navbar-nav" style="margin-left: 5em">
-            <a class="nav-link text-white" href="dashboardKonsultan.php?p=home2">HOME</a>
+            <!-- <a class="nav-link text-white" href="dashboardKonsultan.php?p=home2">HOME</a> -->
             <a class="nav-link text-white" href="dashboardKonsultan.php?p=aboutus">ABOUT US</a>
             <a class="nav-link text-white" href="dashboardKonsultan.php?p=actionPlan">ACTION PLAN</a>
             <a class="nav-link text-white" href="dashboardKonsultan.php?p=actionPlan">BOOKING</a>
+            <a class="nav-link text-white" href="dashboardKonsultan.php?p=lihatBookingConsultant">JADWAL</a>
           </div>
         </div>
 

@@ -1,29 +1,22 @@
 <?php
-require_once
-('./class/class.Booking.php ');
+require_once('./class/class.Booking.php ');
 $objBooking = new Booking();
-// private $NIM;
-// private $IDKonsultan;
-// private $waktu;
-// private $status;
-// private $alasan;
-// private $jadwal;
-// private $kategori;
-// private $tempat;
-// private $IDBooking;
-// private $judul;
-// private $isi;
 
+$mahaID = $objBooking->getIdMahasiswa($_SESSION["username"]);
+var_dump($mahaID[0]['IDMahasiswa']);
 if (isset ($_POST['btnSubmit'])){
-    $objBooking->IDBooking= $_POST['IDBooking'];
+    // var_dump($objBooking);
+    $objBooking->IDMahasiswa= $_POST['IDMahasiswa'];
     $objBooking->IDKonsultan= $_POST['IDKonsultan'];
+    $objBooking->jadwal= $_POST['jadwal'];
     $objBooking->waktu= $_POST['waktu'];
+    $objBooking->tempat= $_POST['tempat'];
+    $objBooking->IDKategori= $_POST['IDKategori'];
     $objBooking->status= $_POST['status'];
     $objBooking->alasan= $_POST['alasan'];
-    $objBooking->jadwal= $_POST['jadwal'];
-    $objBooking->kategori= $_POST['kategori'];
-    $objBooking->NIM= $_POST['NIM'];
-    $objBooking->tempat= $_POST['tempat'];
+
+    // var_dump($objBooking);
+
 
     if(isset($_GET['IDBooking'])){
         $objBooking->IDBooking= $_GET['IDBooking'];
@@ -49,54 +42,47 @@ if (isset ($_POST['btnSubmit'])){
 <html>
     <div class = "mainBooking">
         <div class ="booking">
-            <h2>Edit Booking</h2>
+            <h2>Add/Edit Booking</h2>
 
 
 
             <form action="" method="post">
         
         <table class="table">
+
     <tr>
-    <td>IDBooking</td>
+    <td>IDMahasiswa</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="IDBooking" value="<?php echo $objBooking->IDBooking; ?>">
-    </td>
+    <td><input type="text" class="form-control" name="IDMahasiswa" readonly value="<?php echo $mahaID[0]['IDMahasiswa']; ?>">
     </tr>
-    <tr>
     <td>IDKonsultan</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="IDKonsultan" value="<?php echo $objBooking->IDKonsultan; ?>">
-    </tr>
-    <td>NIM</td>
-    <td>:</td>
-    <td><input type="text" class="form-control" name="NIM" value="<?php echo $objBooking->NIM; ?>">
+    <td><input type="text" class="form-control" name="IDKonsultan" readonly value="<?php echo $_GET['IDKonsultan']; ?>">
     </tr>
     <tr>
-    <td>Nama Belakang</td>
+    <td>jadwal</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="status" value="<?php echo $objBooking->status; ?>">
+    <td><input type="date" class="form-control" name="jadwal" value="<?php echo $objBooking->jadwal; ?>">
     </tr>
     <tr>
-    <td>Email</td>
+    <td>waktu</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="alasan" value="<?php echo $objBooking->alasan; ?>">
+    <td><input type="time" class="form-control" name="waktu" value="<?php echo $objBooking->waktu; ?>">
     </tr>
     <tr>
-    <td>Alamat</td>
-    <td>:</td>
-    <td><input type="text" class="form-control" name="jadwal" value="<?php echo $objBooking->jadwal; ?>">
-    </tr>
-    <td>Gender</td>
-    <td>:</td>
-    <td><input type="text" class="form-control" name="kategori" value="<?php echo $objBooking->kategori; ?>">
-    </tr>
-    <td>No Telp</td>
-    <td>:</td>
-    <td><input type="text" class="form-control" name="waktu" value="<?php echo $objBooking->waktu; ?>">
-    </tr>
     <td>tempat</td>
     <td>:</td>
     <td><input type="text" class="form-control" name="tempat" value="<?php echo $objBooking->tempat; ?>">
+    </tr>
+    <td>IDKategori</td>
+    <td>:</td>
+    <td><input type="text" class="form-control" name="IDKategori" readonly value="<?php echo $_GET['IDKategori']; ?>">
+    </tr>
+    <input type="text" class="form-control" name="status" hidden value="Menunggu Konfirmasi">   
+
+    <td>alasan</td>
+    <td>:</td>
+    <td><input type="text" class="form-control" name="alasan" value="<?php echo $objBooking->alasan; ?>">
     </tr>
     <tr>
     <td colspan="2"></td>

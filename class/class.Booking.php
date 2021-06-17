@@ -3,15 +3,15 @@
 
 class Booking extends Connection {
 
-	private $IDMahasiswa;
-	private $IDKonsultan;
-    private $waktu;
-    private $status;
-    private $alasan;
-    private $jadwal;
-    private $IDKategori;
-    private $tempat;
-    private $IDBooking;
+	private $IDMahasiswa = " ";
+	private $IDKonsultan = " ";
+    private $waktu = " ";
+    private $status = " ";
+    private $alasan = " ";
+    private $jadwal = " ";
+    private $IDKategori = " ";
+    private $tempat= " ";
+    private $IDBooking= " ";
 
   public function __get($atribute) 
   {
@@ -41,7 +41,32 @@ class Booking extends Connection {
         else
             $this->message ='Data gagal ditambahkan!';
     }
-    
+    public function toArray()
+    {
+        return array_map(function ($value) {
+            return $value instanceof Arrayable ? $value->toArray() : $value;
+        }, $this->items);
+    }
+
+    public function getIdMahasiswa($username)
+    {
+        $sql = "SELECT IDMahasiswa FROM mahasiswa WHERE username ='".$username."'";        
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+        
+	}
+
+    public function getIdKonsultan($username)
+    {
+        $sql = "SELECT IDKonsultan FROM konsultan WHERE username ='".$username."'";        
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+        
+	}
     
     public function UpdateBooking(){
     
@@ -54,7 +79,16 @@ class Booking extends Connection {
         else
             $this->message ='Data gagal ditambahkan!';
     }
+
+    public function UpdateStatusBooking($status, $IDBooking)
+    {
+        $sql = "UPDATE booking SET status ='".$status."' WHERE IDBooking ='".$IDBooking."'";
+        $this->hasil = mysqli_query($this->connection, $sql);
+
+        return $IDBooking;
+    }
     
+
     
     public function DeleteBooking(){
       $sql = "INSERT INTO booking (IDMahasiswa, IDKonsultan, waktu, status, alasan, jadwal, IDKategori, tempat, IDBooking)
@@ -94,7 +128,33 @@ class Booking extends Connection {
         return $arrResult;
     }
     
+    public function SelectBookingByKonsultan($IDKonsultan)
+    {
+        $sql = "SELECT * FROM booking WHERE IDKonsultan ='".$IDKonsultan."'";
+        $result = mysqli_query($this->connection, $sql);
+        $arrResult = Array();
+        $cnt=0;
     
+        
+        if(mysqli_num_rows($result) > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                $objBooking = new Booking();
+                $objBooking->IDMahasiswa=$data['IDMahasiswa'];
+                $objBooking->IDKonsultan=$data['IDKonsultan'];
+                $objBooking->waktu=$data['waktu'];
+                $objBooking->status=$data['status'];
+                $objBooking->alasan=$data['alasan'];
+                $objBooking->jadwal=$data['jadwal' ];
+                $objBooking->IDKategori=$data['IDKategori' ];
+                $objBooking->tempat=$data['tempat' ];
+                $objBooking->IDBooking=$data['IDBooking' ];
+                $arrResult[$cnt] = $objBooking;
+                $cnt++;
+            }
+        }
+        return $arrResult;
+     
+    }
     
     public function SelectOneBooking(){
         $sql = "SELECT * FROM booking WHERE IDMahasiswa='$this->IDMahasiswa'";

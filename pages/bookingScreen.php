@@ -4,6 +4,7 @@ $objAkun = new Akun();
 
 
 if (isset ($_POST['btnSubmit'])){
+    var_dump($objAkun);
     $objAkun->username= $_POST['username'];
     $objAkun->password= $_POST['password'];
     $objAkun->namadepan= $_POST['namadepan'];
@@ -14,6 +15,7 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->notelp= $_POST['notelp'];
     $objAkun->role= $_POST['role'];
 
+
     if(isset($_GET['username'])){
         $objAkun->username= $_GET['username'];
         $objAkun->UpdateAkun();
@@ -22,10 +24,10 @@ if (isset ($_POST['btnSubmit'])){
         $objAkun->AddAkun();
     }
     echo "<script> alert('$objAkun->message'); </script>";
-    if($objAkun->hasil){
-    echo '<script> window.location = "index.php?p=crud";
-    </script>';
-    }
+    // if($objAkun->hasil){
+    // echo '<script> window.location = "index.php?p=crud";
+    // </script>';
+    // }
     }
     else if(isset($_GET['username'])){
     $objAkun->username = $_GET['username'];

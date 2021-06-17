@@ -147,9 +147,9 @@ if (isset ($_POST['btnSubmit'])){
               <select class="form-control" name="IDDepartment" value="<?php echo $objKonsultan->IDDepartment;?>">
                 <option selected>- Pilih -</option>
                 <option value="1">Coaching</option>
-                <option value="2">Dosen</option>
-                <option value="3">Keuangan</option>
-                <option value="4">Kemahasiswaan</option>
+                <option value="3">Dosen</option>
+                <option value="4">Keuangan</option>
+                <option value="2">Kemahasiswaan</option>
               </select>
             </div>
 

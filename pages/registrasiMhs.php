@@ -14,7 +14,8 @@ if (isset ($_POST['btnSubmit'])){
     $objAkun->notelp= $_POST['notelp'];
     $objAkun->role='Mahasiswa';
     $objAkun->tgllahir =$_POST['tgllahir'];
-
+    var_dump($objAkun);
+    exit();
     // Upload File Registrasi//
     $ukuran_maks_file = 2000000;
     $tipe_file = @$_FILES['fupload']['type'];

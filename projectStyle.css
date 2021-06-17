@@ -80,11 +80,16 @@ h5 {
   text-align: center;
 }
 .card-body {
-  background-color: #6e89b8;
+  background-color: #4971b7;
+  margin-bottom: 20px;
 }
 
 .card-title {
   text-decoration: none;
+}
+
+.contee {
+  margin-bottom: 30px;
 }
 
 a {
@@ -108,13 +113,7 @@ a .card-title {
 }
 
 .card {
-  width: 24vw;
-  height: 45vh;
-  margin-bottom: 40px;
-}
-
-.card {
-  border-radius: 300px;
+  background-color: #9dff00;
 }
 
 .testbox {
@@ -245,13 +244,18 @@ a .card-title {
 }
 .card-container {
   width: 600px;
-  height: 500px;
+  height: 400px;
   background: #fff;
   border-radius: 6px;
   margin-right: 50px;
+  margin-bottom: 50px;
   box-shadow: 0px 1px 10px 1px #000;
   overflow: hidden;
   display: inline-block;
+}
+
+.vira {
+  margin-bottom: 40px;
 }
 .upper-container {
   height: 140px;

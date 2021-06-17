@@ -58,7 +58,7 @@
               </div> -->
               
           </div>
-          <div class="line"></div>
+
         </div>
         <div class="foot">
             <button type="button" class="consult">Consultation History</button>

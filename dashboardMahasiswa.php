@@ -1,7 +1,12 @@
 <?php 
 	if (!isset($_SESSION)) {
 		session_start();
+<<<<<<< Updated upstream
 	}	
+=======
+	}
+
+>>>>>>> Stashed changes
  	require "inc.koneksi.php";		
 ?>
 <!DOCTYPE html>
@@ -10,7 +15,7 @@
     <title></title>
 
     <!-- MY CSS -->
-    <link rel="stylesheet" href="projectStyle.css"/>
+    <link type= text/css rel="stylesheet" href="projectStyle.css"/>
 
     <!-- CSS BOOTSTRAP -->
     <link
