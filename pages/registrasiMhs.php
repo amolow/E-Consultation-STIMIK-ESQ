@@ -181,7 +181,7 @@ if (isset ($_POST['btnSubmit'])){
 
                     
               <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
-              <a href="dashboardAdmin.php?p=employeelist" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
+              <a href="dashboardAdmin.php?p=aboutus" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
           </div>
   
 

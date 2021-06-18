@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <a href="dashboardKonsultan.php?p=profile">
+        <a href="dashboardKonsultan.php?p=profileKonsultan">
           <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" />
         </a>
         <a href="index.php">

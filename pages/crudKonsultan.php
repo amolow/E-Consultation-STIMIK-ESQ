@@ -5,7 +5,6 @@
 <span class="text">
 <strong>Konsultan List</strong>
 </span></h4>
-<a class="btn btn-primary" href="index.php?p=addKonsultan">Add</a>
 <table class="table table-bordered">
 <tr>
 <th>No.</th>
@@ -42,11 +41,9 @@
             echo '<td>'.$dataKonsultan->gender.'</td>';
             echo '<td>'.$dataKonsultan->Namakategori.'</td>';
             echo '<td>
-            <a class="btn btn-primary" href="index.php?p=addKonsultan&IDKonsultan='.$dataKonsultan->IDKonsultan.'"> 
-            Edit 
-            </a> | 
+
             
-            <a class="btn btn-primary" href="index.php?p=deleteAkun&IDKonsultan='.$dataKonsultan->IDKonsultan.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-primary" href="dashboardAdmin.php?p=deleteAkun&username='.$dataKonsultan->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';

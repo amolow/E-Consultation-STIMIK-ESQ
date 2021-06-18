@@ -18,7 +18,8 @@ if (isset ($_POST['btnSubmit'])){
     // var_dump($objBooking);
 
 
-    if(isset($_GET['IDBooking'])){
+    if(isset($_GET['IDBooking']))
+    {
         $objBooking->IDBooking= $_GET['IDBooking'];
         $objBooking->UpdateBooking();
     }
@@ -26,14 +27,17 @@ if (isset ($_POST['btnSubmit'])){
         $objBooking->AddBooking();
     }
     echo "<script> alert('$objBooking->message'); </script>";
-    if($objBooking->hasil){
+
+
+    if($objBooking->hasil)
+    {
     echo '<script> window.location = "index.php?p=crud";
     </script>';
     }
     }
     else if(isset($_GET['IDBooking'])){
     $objBooking->IDBooking = $_GET['IDBooking'];
-    $objBooking->SelectOneBooking();
+    $objBooking->SelectOneBooking($_GET['IDBooking']);
     }
     ?>
 
@@ -53,11 +57,11 @@ if (isset ($_POST['btnSubmit'])){
     <tr>
     <td>IDMahasiswa</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="IDMahasiswa" readonly value="<?php echo $mahaID[0]['IDMahasiswa']; ?>">
+    <td><input type="text" class="form-control" name="IDMahasiswa"  value="<?php echo $mahaID[0]['IDMahasiswa']; ?>">
     </tr>
     <td>IDKonsultan</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="IDKonsultan" readonly value="<?php echo $_GET['IDKonsultan']; ?>">
+    <td><input type="text" class="form-control" name="IDKonsultan"  value="<?php echo $objBooking->IDKonsultan; ?>">
     </tr>
     <tr>
     <td>jadwal</td>
@@ -76,7 +80,7 @@ if (isset ($_POST['btnSubmit'])){
     </tr>
     <td>IDKategori</td>
     <td>:</td>
-    <td><input type="text" class="form-control" name="IDKategori" readonly value="<?php echo $_GET['IDKategori']; ?>">
+    <td><input type="text" class="form-control" name="IDKategori"  value="<?php echo $objBooking->IDKategori; ?>">
     </tr>
     <input type="text" class="form-control" name="status" hidden value="Menunggu Konfirmasi">   
 
@@ -91,7 +95,7 @@ if (isset ($_POST['btnSubmit'])){
     </table>
     
     <input type="submit" class="btn btn-primary btn-lg btn-block btnsuccess" value="Save" name="btnSubmit">
-            <a href="dashboardMahasiswa.php?p=crudbooking" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
+            <a href="dashboardAdmin.php?p=crudbooking" class="btn btn-secondary btn-lg btn-block btnwarning">Cancel</a>
             </form>       
         </div>
 

@@ -6,7 +6,6 @@
 <span class="text">
 <strong>Mahasiswa List</strong>
 </span></h4>
-<a class="btn btn-primary" href="index.php?p=addMahasiswa">Add</a>
 <table class="table table-bordered">
 <tr>
 <th>No</th>
@@ -50,11 +49,9 @@
             echo '<td>'.$dataMahasiswa->gender.'</td>';
             echo '<td>'.$dataMahasiswa->NamaProdi.'</td>';
             echo '<td>
-            <a class="btn btn-primary" href="index.php?p=addMahasiswa&NIM='.$dataMahasiswa->NIM.'"> 
-            Edit 
-            </a> | 
+
             
-            <a class="btn btn-primary" href="index.php?p=deleteMahasiswa&NIM='.$dataMahasiswa->NIM.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
+            <a class="btn btn-primary" href="dashboardAdmin.php?p=deleteAkun&username='.$dataMahasiswa->username.'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">
              Delete 
              </a> 
              </td>';

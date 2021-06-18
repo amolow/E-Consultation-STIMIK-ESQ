@@ -22,7 +22,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-family:Roboto;">
           <div class="navbar-nav" style="margin-left: 5em">
-            <a class="nav-link text-white" href="dashboardAdmin.php?p=home2">HOME</a>
             <a class="nav-link text-white" href="dashboardAdmin.php?p=aboutus">ABOUT US</a>
             <a class="nav-link text-white" href="dashboardAdmin.php?p=crudbooking">BOOKING</a>
               <li class="nav-item dropdown">
@@ -71,8 +70,8 @@
       </div>
     </div>
 
-        <a href="dashboardAdmin.php?p=profile">
-          <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" />
+        <!-- <a href="dashboardAdmin.php?p=profile">
+          <img src="Asset/profile.png" alt="" style="width:50px; margin: 20px;" /> -->
         </a>
         <a href="index.php">
           <img src="Asset/logout.png" alt="" id="logout" />

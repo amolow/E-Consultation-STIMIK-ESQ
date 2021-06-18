@@ -60,7 +60,7 @@ if (!empty($_GET['p'])) {
         echo "Halaman Tidak Ditemukan";
     }
 } else {
-    include "./pages/home2.php";
+    include "./pages/aboutus.php";
 }
 ?>
 
